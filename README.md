@@ -1,2 +1,4 @@
 # EE2003-Computer-Organisation
-Set of assignments done as a part of EE-2003 Course
+Repository of assignments and other resources for the EE2003 Computer Organisation course done in the Jan-May 2020 semester.
+
+
