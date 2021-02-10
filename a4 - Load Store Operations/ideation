@@ -1,0 +1,31 @@
+cpu_tb:
+
+only clk runs 1000 times
+
+-------------------------------------------------------
+
+cpu:
+
+has the PC. continuously increments iaddr by 4
+takes corr idata from imem
+has to decode idata and pass corr values
+
+-------------------------------------------------------
+
+imem:
+
+automatically loads the initial instructions from idata.mem
+-------------------------------------------------------
+
+dmem:
+
+automatically gives drdata, mainly for store instructions
+-------------------------------------------------------
+
+loading misaligned stuff:
+always load low and high and then mask corr bytes
+
+addr: 4n:   direct
+      4n+1: .....
+
+storing misaligned stuff:

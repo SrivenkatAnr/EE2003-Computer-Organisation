@@ -1,0 +1,44 @@
+prog*.txt : has the instruction 
+reg_prog*.txt : has final value for 32 registers
+file_list.txt : has list of programs for testing
+
+rs1, rs2: Address of operands;  Passed to regfile;
+rv1, rv2: ALU inputs;    rv1: 1st operand;    rv2: 2nd operand;
+rvout: ALU output; Passed to wdata in regfile;
+rd: Address of output reg;    Passed to regfile;
+we: Write enable;    Passed to regfile;
+
+------------------------------------------------------------------------
+
+In ALU:
+
+rv1: value of 1st operand;    Taken from regfile;
+rv2: value of 2nd operand;    Taken from dummy decoder;
+
+Unique ops: ADD, SLL, SLT, SLTU, SUB, XOR, OR, AND, SRL, SRA 
+
+------------------------------------------------------------------------
+
+In dummy decoder:
+
+rs1,rs2: address of operand;    Passed to regfile;
+rd: address of output;    Passed to regfile;
+
+r_rv2: value in register rs2;    Taken from regfile;
+
+have a decoder to check if instruction loads reg value or imm value. Pass corr value to rv2 directly (Passed to ALU)
+
+------------------------------------------------------------------------
+
+In regfile:
+
+read data from reg rs1 and pass to rv1;   rs1, rs2 taken from dummydecoder;    
+read data from reg rs2 and pass it to dummydecoder in rv2(r_rv2 in tb and dummydecoder)
+
+value of rvout is passed to wdata
+if we is 1, write wdata into rd
+
+
+------------------------------------------------------------------------
+
+

@@ -1,0 +1,15 @@
+---
+kind: pipeline
+name: test-a0
+type: docker
+
+steps:
+  - name: compare
+    image: alpine
+    commands:
+      - echo "success" > /tmp/t
+      - diff -wB output /tmp/t
+
+trigger:
+    event:
+        - tag

@@ -1,0 +1,2211 @@
+Compiling sources for behavioural simulation
+Ensure all required files listed in program_files_behav.txt
+RUNNING TEST 
+PASSED
+
+Passed
+Running yosys to synthesize cpu.
+Ensure that 'synth.ys' lists all the modules needed for the synthesis,
+and that the top module is called 'cpu'
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2019  Clifford Wolf <clifford@clifford.at>           |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9 (git sha1 1979e0b)
+
+
+-- Executing script file `synth.ys' --
+
+1. Executing Verilog-2005 frontend: cpu.v
+Parsing Verilog input from `cpu.v' to AST representation.
+Generating RTLIL representation for module `\cpu'.
+Note: Assuming pure combinatorial block at cpu.v:97 in
+compliance with IEC 62142(E):2005 / IEEE Std. 1364.1(E):2002. Recommending
+use of @* instead of @(...) for better match of synthesis and simulation.
+Note: Assuming pure combinatorial block at cpu.v:172 in
+compliance with IEC 62142(E):2005 / IEEE Std. 1364.1(E):2002. Recommending
+use of @* instead of @(...) for better match of synthesis and simulation.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: alu32.v
+Parsing Verilog input from `alu32.v' to AST representation.
+Generating RTLIL representation for module `\alu32'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: regfile.v
+Parsing Verilog input from `regfile.v' to AST representation.
+Generating RTLIL representation for module `\regfile'.
+Successfully finished Verilog frontend.
+
+4. Executing SYNTH_XILINX pass.
+
+4.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/xilinx/cells_sim.v
+Parsing Verilog input from `/usr/bin/../share/yosys/xilinx/cells_sim.v' to AST representation.
+Generating RTLIL representation for module `\VCC'.
+Generating RTLIL representation for module `\GND'.
+Generating RTLIL representation for module `\IBUF'.
+Generating RTLIL representation for module `\OBUF'.
+Generating RTLIL representation for module `\BUFG'.
+Generating RTLIL representation for module `\BUFGCTRL'.
+Generating RTLIL representation for module `\BUFHCE'.
+Generating RTLIL representation for module `\INV'.
+Generating RTLIL representation for module `\LUT1'.
+Generating RTLIL representation for module `\LUT2'.
+Generating RTLIL representation for module `\LUT3'.
+Generating RTLIL representation for module `\LUT4'.
+Generating RTLIL representation for module `\LUT5'.
+Generating RTLIL representation for module `\LUT6'.
+Generating RTLIL representation for module `\LUT6_2'.
+Generating RTLIL representation for module `\MUXCY'.
+Generating RTLIL representation for module `\MUXF7'.
+Generating RTLIL representation for module `\MUXF8'.
+Generating RTLIL representation for module `\XORCY'.
+Generating RTLIL representation for module `\CARRY4'.
+Generating RTLIL representation for module `\FDRE'.
+Generating RTLIL representation for module `\FDSE'.
+Generating RTLIL representation for module `\FDCE'.
+Generating RTLIL representation for module `\FDPE'.
+Generating RTLIL representation for module `\FDRE_1'.
+Generating RTLIL representation for module `\FDSE_1'.
+Generating RTLIL representation for module `\FDCE_1'.
+Generating RTLIL representation for module `\FDPE_1'.
+Generating RTLIL representation for module `\RAM32X1D'.
+Generating RTLIL representation for module `\RAM64X1D'.
+Generating RTLIL representation for module `\RAM128X1D'.
+Generating RTLIL representation for module `\SRL16E'.
+Generating RTLIL representation for module `\SRLC32E'.
+Successfully finished Verilog frontend.
+
+4.2. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/xilinx/cells_xtra.v
+Parsing Verilog input from `/usr/bin/../share/yosys/xilinx/cells_xtra.v' to AST representation.
+Generating RTLIL representation for module `\BSCANE2'.
+Generating RTLIL representation for module `\BUFGCE'.
+Generating RTLIL representation for module `\BUFGCE_1'.
+Generating RTLIL representation for module `\BUFGMUX'.
+Generating RTLIL representation for module `\BUFGMUX_1'.
+Generating RTLIL representation for module `\BUFGMUX_CTRL'.
+Generating RTLIL representation for module `\BUFH'.
+Generating RTLIL representation for module `\BUFIO'.
+Generating RTLIL representation for module `\BUFMR'.
+Generating RTLIL representation for module `\BUFMRCE'.
+Generating RTLIL representation for module `\BUFR'.
+Generating RTLIL representation for module `\CAPTUREE2'.
+Generating RTLIL representation for module `\CFGLUT5'.
+Generating RTLIL representation for module `\DCIRESET'.
+Generating RTLIL representation for module `\DNA_PORT'.
+Generating RTLIL representation for module `\DSP48E1'.
+Generating RTLIL representation for module `\EFUSE_USR'.
+Generating RTLIL representation for module `\FIFO18E1'.
+Generating RTLIL representation for module `\FIFO36E1'.
+Generating RTLIL representation for module `\FRAME_ECCE2'.
+Generating RTLIL representation for module `\GTHE2_CHANNEL'.
+Generating RTLIL representation for module `\GTHE2_COMMON'.
+Generating RTLIL representation for module `\GTPE2_CHANNEL'.
+Generating RTLIL representation for module `\GTPE2_COMMON'.
+Generating RTLIL representation for module `\GTXE2_CHANNEL'.
+Generating RTLIL representation for module `\GTXE2_COMMON'.
+Generating RTLIL representation for module `\IBUF_IBUFDISABLE'.
+Generating RTLIL representation for module `\IBUF_INTERMDISABLE'.
+Generating RTLIL representation for module `\IBUFDS'.
+Generating RTLIL representation for module `\IBUFDS_DIFF_OUT'.
+Generating RTLIL representation for module `\IBUFDS_DIFF_OUT_IBUFDISABLE'.
+Generating RTLIL representation for module `\IBUFDS_DIFF_OUT_INTERMDISABLE'.
+Generating RTLIL representation for module `\IBUFDS_GTE2'.
+Generating RTLIL representation for module `\IBUFDS_IBUFDISABLE'.
+Generating RTLIL representation for module `\IBUFDS_INTERMDISABLE'.
+Generating RTLIL representation for module `\ICAPE2'.
+Generating RTLIL representation for module `\IDDR'.
+Generating RTLIL representation for module `\IDDR_2CLK'.
+Generating RTLIL representation for module `\IDELAYCTRL'.
+Generating RTLIL representation for module `\IDELAYE2'.
+Generating RTLIL representation for module `\IN_FIFO'.
+Generating RTLIL representation for module `\IOBUF'.
+Generating RTLIL representation for module `\IOBUF_DCIEN'.
+Generating RTLIL representation for module `\IOBUF_INTERMDISABLE'.
+Generating RTLIL representation for module `\IOBUFDS'.
+Generating RTLIL representation for module `\IOBUFDS_DCIEN'.
+Generating RTLIL representation for module `\IOBUFDS_DIFF_OUT'.
+Generating RTLIL representation for module `\IOBUFDS_DIFF_OUT_DCIEN'.
+Generating RTLIL representation for module `\IOBUFDS_DIFF_OUT_INTERMDISABLE'.
+Generating RTLIL representation for module `\ISERDESE2'.
+Generating RTLIL representation for module `\KEEPER'.
+Generating RTLIL representation for module `\LDCE'.
+Generating RTLIL representation for module `\LDPE'.
+Generating RTLIL representation for module `\MMCME2_ADV'.
+Generating RTLIL representation for module `\MMCME2_BASE'.
+Generating RTLIL representation for module `\OBUFDS'.
+Generating RTLIL representation for module `\OBUFT'.
+Generating RTLIL representation for module `\OBUFTDS'.
+Generating RTLIL representation for module `\ODDR'.
+Generating RTLIL representation for module `\ODELAYE2'.
+Generating RTLIL representation for module `\OSERDESE2'.
+Generating RTLIL representation for module `\OUT_FIFO'.
+Generating RTLIL representation for module `\PHASER_IN'.
+Generating RTLIL representation for module `\PHASER_IN_PHY'.
+Generating RTLIL representation for module `\PHASER_OUT'.
+Generating RTLIL representation for module `\PHASER_OUT_PHY'.
+Generating RTLIL representation for module `\PHASER_REF'.
+Generating RTLIL representation for module `\PHY_CONTROL'.
+Generating RTLIL representation for module `\PLLE2_ADV'.
+Generating RTLIL representation for module `\PLLE2_BASE'.
+Generating RTLIL representation for module `\PS7'.
+Generating RTLIL representation for module `\PULLDOWN'.
+Generating RTLIL representation for module `\PULLUP'.
+Generating RTLIL representation for module `\RAM128X1S'.
+Generating RTLIL representation for module `\RAM256X1S'.
+Generating RTLIL representation for module `\RAM32M'.
+Generating RTLIL representation for module `\RAM32X1S'.
+Generating RTLIL representation for module `\RAM32X1S_1'.
+Generating RTLIL representation for module `\RAM32X2S'.
+Generating RTLIL representation for module `\RAM64M'.
+Replacing existing blackbox module `\RAM64X1D' at /usr/bin/../share/yosys/xilinx/cells_xtra.v:3741.
+Generating RTLIL representation for module `\RAM64X1D'.
+Generating RTLIL representation for module `\RAM64X1S'.
+Generating RTLIL representation for module `\RAM64X1S_1'.
+Generating RTLIL representation for module `\RAM64X2S'.
+Generating RTLIL representation for module `\ROM128X1'.
+Generating RTLIL representation for module `\ROM256X1'.
+Generating RTLIL representation for module `\ROM32X1'.
+Generating RTLIL representation for module `\ROM64X1'.
+Generating RTLIL representation for module `\STARTUPE2'.
+Generating RTLIL representation for module `\USR_ACCESSE2'.
+Generating RTLIL representation for module `\XADC'.
+Successfully finished Verilog frontend.
+
+4.3. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/xilinx/brams_bb.v
+Parsing Verilog input from `/usr/bin/../share/yosys/xilinx/brams_bb.v' to AST representation.
+Generating RTLIL representation for module `\RAMB18E1'.
+Generating RTLIL representation for module `\RAMB36E1'.
+Successfully finished Verilog frontend.
+
+4.4. Executing HIERARCHY pass (managing design hierarchy).
+
+4.4.1. Analyzing design hierarchy..
+Top module:  \cpu
+Used module:     \regfile
+Used module:     \alu32
+
+4.4.2. Analyzing design hierarchy..
+Top module:  \cpu
+Used module:     \regfile
+Used module:     \alu32
+Removed 0 unused modules.
+
+4.5. Executing SYNTH pass.
+
+4.5.1. Executing PROC pass (convert processes to netlists).
+
+4.5.1.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.5.1.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$alu32.v:12$123 in module alu32.
+Marked 1 switch rules as full_case in process $proc$cpu.v:172$64 in module cpu.
+Removed 1 dead cases from process $proc$cpu.v:139$45 in module cpu.
+Marked 1 switch rules as full_case in process $proc$cpu.v:139$45 in module cpu.
+Marked 1 switch rules as full_case in process $proc$cpu.v:97$4 in module cpu.
+Marked 1 switch rules as full_case in process $proc$cpu.v:77$3 in module cpu.
+Removed a total of 1 dead cases.
+
+4.5.1.3. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\cpu.$proc$cpu.v:69$122'.
+  Set init value: \opflag = 5'00000
+  Set init value: \alu_opcode = 6'000000
+
+4.5.1.4. Executing PROC_ARST pass (detect async resets in processes).
+
+4.5.1.5. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\regfile.$proc$regfile.v:18$245'.
+     1/65: $0\i[31:0]
+     2/65: $0$memwr$\memory$regfile.v:20$201_DATA[31:0]$309
+     3/65: $0$memwr$\memory$regfile.v:20$201_ADDR[31:0]$308
+     4/65: $0$memwr$\memory$regfile.v:20$200_DATA[31:0]$307
+     5/65: $0$memwr$\memory$regfile.v:20$200_ADDR[31:0]$306
+     6/65: $0$memwr$\memory$regfile.v:20$199_DATA[31:0]$305
+     7/65: $0$memwr$\memory$regfile.v:20$199_ADDR[31:0]$304
+     8/65: $0$memwr$\memory$regfile.v:20$198_DATA[31:0]$303
+     9/65: $0$memwr$\memory$regfile.v:20$198_ADDR[31:0]$302
+    10/65: $0$memwr$\memory$regfile.v:20$197_DATA[31:0]$301
+    11/65: $0$memwr$\memory$regfile.v:20$197_ADDR[31:0]$300
+    12/65: $0$memwr$\memory$regfile.v:20$196_DATA[31:0]$299
+    13/65: $0$memwr$\memory$regfile.v:20$196_ADDR[31:0]$298
+    14/65: $0$memwr$\memory$regfile.v:20$195_DATA[31:0]$297
+    15/65: $0$memwr$\memory$regfile.v:20$195_ADDR[31:0]$296
+    16/65: $0$memwr$\memory$regfile.v:20$194_DATA[31:0]$295
+    17/65: $0$memwr$\memory$regfile.v:20$194_ADDR[31:0]$294
+    18/65: $0$memwr$\memory$regfile.v:20$193_DATA[31:0]$293
+    19/65: $0$memwr$\memory$regfile.v:20$193_ADDR[31:0]$292
+    20/65: $0$memwr$\memory$regfile.v:20$192_DATA[31:0]$291
+    21/65: $0$memwr$\memory$regfile.v:20$192_ADDR[31:0]$290
+    22/65: $0$memwr$\memory$regfile.v:20$191_DATA[31:0]$289
+    23/65: $0$memwr$\memory$regfile.v:20$191_ADDR[31:0]$288
+    24/65: $0$memwr$\memory$regfile.v:20$190_DATA[31:0]$287
+    25/65: $0$memwr$\memory$regfile.v:20$190_ADDR[31:0]$286
+    26/65: $0$memwr$\memory$regfile.v:20$189_DATA[31:0]$285
+    27/65: $0$memwr$\memory$regfile.v:20$189_ADDR[31:0]$284
+    28/65: $0$memwr$\memory$regfile.v:20$188_DATA[31:0]$283
+    29/65: $0$memwr$\memory$regfile.v:20$188_ADDR[31:0]$282
+    30/65: $0$memwr$\memory$regfile.v:20$187_DATA[31:0]$281
+    31/65: $0$memwr$\memory$regfile.v:20$187_ADDR[31:0]$280
+    32/65: $0$memwr$\memory$regfile.v:20$186_DATA[31:0]$279
+    33/65: $0$memwr$\memory$regfile.v:20$186_ADDR[31:0]$278
+    34/65: $0$memwr$\memory$regfile.v:20$185_DATA[31:0]$277
+    35/65: $0$memwr$\memory$regfile.v:20$185_ADDR[31:0]$276
+    36/65: $0$memwr$\memory$regfile.v:20$184_DATA[31:0]$275
+    37/65: $0$memwr$\memory$regfile.v:20$184_ADDR[31:0]$274
+    38/65: $0$memwr$\memory$regfile.v:20$183_DATA[31:0]$273
+    39/65: $0$memwr$\memory$regfile.v:20$183_ADDR[31:0]$272
+    40/65: $0$memwr$\memory$regfile.v:20$182_DATA[31:0]$271
+    41/65: $0$memwr$\memory$regfile.v:20$182_ADDR[31:0]$270
+    42/65: $0$memwr$\memory$regfile.v:20$181_DATA[31:0]$269
+    43/65: $0$memwr$\memory$regfile.v:20$181_ADDR[31:0]$268
+    44/65: $0$memwr$\memory$regfile.v:20$180_DATA[31:0]$267
+    45/65: $0$memwr$\memory$regfile.v:20$180_ADDR[31:0]$266
+    46/65: $0$memwr$\memory$regfile.v:20$179_DATA[31:0]$265
+    47/65: $0$memwr$\memory$regfile.v:20$179_ADDR[31:0]$264
+    48/65: $0$memwr$\memory$regfile.v:20$178_DATA[31:0]$263
+    49/65: $0$memwr$\memory$regfile.v:20$178_ADDR[31:0]$262
+    50/65: $0$memwr$\memory$regfile.v:20$177_DATA[31:0]$261
+    51/65: $0$memwr$\memory$regfile.v:20$177_ADDR[31:0]$260
+    52/65: $0$memwr$\memory$regfile.v:20$176_DATA[31:0]$259
+    53/65: $0$memwr$\memory$regfile.v:20$176_ADDR[31:0]$258
+    54/65: $0$memwr$\memory$regfile.v:20$175_DATA[31:0]$257
+    55/65: $0$memwr$\memory$regfile.v:20$175_ADDR[31:0]$256
+    56/65: $0$memwr$\memory$regfile.v:20$174_DATA[31:0]$255
+    57/65: $0$memwr$\memory$regfile.v:20$174_ADDR[31:0]$254
+    58/65: $0$memwr$\memory$regfile.v:20$173_DATA[31:0]$253
+    59/65: $0$memwr$\memory$regfile.v:20$173_ADDR[31:0]$246
+    60/65: $0$memwr$\memory$regfile.v:20$172_DATA[31:0]$252
+    61/65: $0$memwr$\memory$regfile.v:20$172_ADDR[31:0]$251
+    62/65: $0$memwr$\memory$regfile.v:20$171_DATA[31:0]$250
+    63/65: $0$memwr$\memory$regfile.v:20$171_ADDR[31:0]$249
+    64/65: $0$memwr$\memory$regfile.v:20$170_DATA[31:0]$248
+    65/65: $0$memwr$\memory$regfile.v:20$170_ADDR[31:0]$247
+Creating decoders for process `\regfile.$proc$regfile.v:30$206'.
+     1/3: $0$memwr$\memory$regfile.v:32$202_EN[31:0]$209
+     2/3: $0$memwr$\memory$regfile.v:32$202_DATA[31:0]$208
+     3/3: $0$memwr$\memory$regfile.v:32$202_ADDR[4:0]$207
+Creating decoders for process `\alu32.$proc$alu32.v:12$123'.
+     1/2: $1\alu_out[31:0]
+     2/2: $0\alu_out[31:0]
+Creating decoders for process `\cpu.$proc$cpu.v:69$122'.
+     1/2: $2\alu_opcode[5:0]
+     2/2: $2\opflag[4:0]
+Creating decoders for process `\cpu.$proc$cpu.v:172$64'.
+     1/2: $1\buff_out[31:0]
+     2/2: $0\buff_out[31:0]
+Creating decoders for process `\cpu.$proc$cpu.v:139$45'.
+     1/2: $1\alu_opcode[5:0]
+     2/2: $0\alu_opcode[5:0]
+Creating decoders for process `\cpu.$proc$cpu.v:97$4'.
+     1/2: $1\opflag[4:0]
+     2/2: $0\opflag[4:0]
+Creating decoders for process `\cpu.$proc$cpu.v:77$3'.
+     1/2: $1\iaddr[31:0]
+     2/2: $0\iaddr[31:0]
+
+4.5.1.6. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$173_ADDR' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.\i' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$170_ADDR' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$170_DATA' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$171_ADDR' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$171_DATA' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$172_ADDR' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$172_DATA' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$173_DATA' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$174_ADDR' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$174_DATA' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$175_ADDR' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$175_DATA' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$176_ADDR' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$176_DATA' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$177_ADDR' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$177_DATA' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$178_ADDR' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$178_DATA' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$179_ADDR' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$179_DATA' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$180_ADDR' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$180_DATA' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$181_ADDR' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$181_DATA' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$182_ADDR' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$182_DATA' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$183_ADDR' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$183_DATA' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$184_ADDR' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$184_DATA' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$185_ADDR' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$185_DATA' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$186_ADDR' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$186_DATA' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$187_ADDR' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$187_DATA' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$188_ADDR' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$188_DATA' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$189_ADDR' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$189_DATA' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$190_ADDR' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$190_DATA' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$191_ADDR' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$191_DATA' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$192_ADDR' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$192_DATA' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$193_ADDR' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$193_DATA' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$194_ADDR' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$194_DATA' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$195_ADDR' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$195_DATA' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$196_ADDR' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$196_DATA' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$197_ADDR' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$197_DATA' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$198_ADDR' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$198_DATA' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$199_ADDR' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$199_DATA' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$200_ADDR' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$200_DATA' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$201_ADDR' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\regfile.$memwr$\memory$regfile.v:20$201_DATA' from process `\regfile.$proc$regfile.v:18$245'.
+No latch inferred for signal `\alu32.\alu_out' from process `\alu32.$proc$alu32.v:12$123'.
+No latch inferred for signal `\cpu.\buff_out' from process `\cpu.$proc$cpu.v:172$64'.
+No latch inferred for signal `\cpu.\alu_opcode' from process `\cpu.$proc$cpu.v:139$45'.
+No latch inferred for signal `\cpu.\opflag' from process `\cpu.$proc$cpu.v:97$4'.
+
+4.5.1.7. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\regfile.$memwr$\memory$regfile.v:32$202_ADDR' using process `\regfile.$proc$regfile.v:30$206'.
+  created $dff cell `$procdff$362' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\memory$regfile.v:32$202_DATA' using process `\regfile.$proc$regfile.v:30$206'.
+  created $dff cell `$procdff$363' with positive edge clock.
+Creating register for signal `\regfile.$memwr$\memory$regfile.v:32$202_EN' using process `\regfile.$proc$regfile.v:30$206'.
+  created $dff cell `$procdff$364' with positive edge clock.
+Creating register for signal `\cpu.\iaddr' using process `\cpu.$proc$cpu.v:77$3'.
+  created $dff cell `$procdff$365' with positive edge clock.
+
+4.5.1.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `regfile.$proc$regfile.v:18$245'.
+Found and cleaned up 1 empty switch in `\regfile.$proc$regfile.v:30$206'.
+Removing empty process `regfile.$proc$regfile.v:30$206'.
+Found and cleaned up 1 empty switch in `\alu32.$proc$alu32.v:12$123'.
+Removing empty process `alu32.$proc$alu32.v:12$123'.
+Removing empty process `cpu.$proc$cpu.v:69$122'.
+Found and cleaned up 1 empty switch in `\cpu.$proc$cpu.v:172$64'.
+Removing empty process `cpu.$proc$cpu.v:172$64'.
+Found and cleaned up 1 empty switch in `\cpu.$proc$cpu.v:139$45'.
+Removing empty process `cpu.$proc$cpu.v:139$45'.
+Found and cleaned up 1 empty switch in `\cpu.$proc$cpu.v:97$4'.
+Removing empty process `cpu.$proc$cpu.v:97$4'.
+Found and cleaned up 1 empty switch in `\cpu.$proc$cpu.v:77$3'.
+Removing empty process `cpu.$proc$cpu.v:77$3'.
+Cleaned up 6 empty switches.
+
+4.5.2. Executing OPT_EXPR pass (perform const folding).
+Optimizing module regfile.
+Optimizing module alu32.
+<suppressed ~1 debug messages>
+Optimizing module cpu.
+<suppressed ~14 debug messages>
+
+4.5.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \regfile..
+Finding unused cells or wires in module \alu32..
+Finding unused cells or wires in module \cpu..
+Removed 0 unused cells and 175 unused wires.
+<suppressed ~3 debug messages>
+
+4.5.4. Executing CHECK pass (checking for obvious problems).
+checking module alu32..
+checking module cpu..
+checking module regfile..
+found and reported 0 problems.
+
+4.5.5. Executing OPT pass (performing simple optimizations).
+
+4.5.5.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module alu32.
+Optimizing module cpu.
+Optimizing module regfile.
+
+4.5.5.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\alu32'.
+<suppressed ~3 debug messages>
+Finding identical cells in module `\cpu'.
+<suppressed ~90 debug messages>
+Finding identical cells in module `\regfile'.
+Removed a total of 31 cells.
+
+4.5.5.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \alu32..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \cpu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \regfile..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~17 debug messages>
+
+4.5.5.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \alu32.
+  Optimizing cells in module \cpu.
+    New ctrl vector for $pmux cell $procmux$336: { $auto$opt_reduce.cc:132:opt_mux$367 $procmux$345_CMP $eq$cpu.v:121$21_Y $eq$cpu.v:120$18_Y $eq$cpu.v:118$12_Y $eq$cpu.v:192$93_Y $procmux$340_CMP $eq$cpu.v:117$9_Y $procmux$338_CMP $procmux$337_CMP }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:126:opt_mux$366: { $procmux$346_CMP $procmux$347_CMP }
+  Optimizing cells in module \cpu.
+  Optimizing cells in module \regfile.
+    Consolidated identical input bits for $mux cell $procmux$310:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$0$memwr$\memory$regfile.v:32$202_EN[31:0]$209
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\memory$regfile.v:32$202_EN[31:0]$209 [0]
+      New connections: $0$memwr$\memory$regfile.v:32$202_EN[31:0]$209 [31:1] = { $0$memwr$\memory$regfile.v:32$202_EN[31:0]$209 [0] $0$memwr$\memory$regfile.v:32$202_EN[31:0]$209 [0] $0$memwr$\memory$regfile.v:32$202_EN[31:0]$209 [0] $0$memwr$\memory$regfile.v:32$202_EN[31:0]$209 [0] $0$memwr$\memory$regfile.v:32$202_EN[31:0]$209 [0] $0$memwr$\memory$regfile.v:32$202_EN[31:0]$209 [0] $0$memwr$\memory$regfile.v:32$202_EN[31:0]$209 [0] $0$memwr$\memory$regfile.v:32$202_EN[31:0]$209 [0] $0$memwr$\memory$regfile.v:32$202_EN[31:0]$209 [0] $0$memwr$\memory$regfile.v:32$202_EN[31:0]$209 [0] $0$memwr$\memory$regfile.v:32$202_EN[31:0]$209 [0] $0$memwr$\memory$regfile.v:32$202_EN[31:0]$209 [0] $0$memwr$\memory$regfile.v:32$202_EN[31:0]$209 [0] $0$memwr$\memory$regfile.v:32$202_EN[31:0]$209 [0] $0$memwr$\memory$regfile.v:32$202_EN[31:0]$209 [0] $0$memwr$\memory$regfile.v:32$202_EN[31:0]$209 [0] $0$memwr$\memory$regfile.v:32$202_EN[31:0]$209 [0] $0$memwr$\memory$regfile.v:32$202_EN[31:0]$209 [0] $0$memwr$\memory$regfile.v:32$202_EN[31:0]$209 [0] $0$memwr$\memory$regfile.v:32$202_EN[31:0]$209 [0] $0$memwr$\memory$regfile.v:32$202_EN[31:0]$209 [0] $0$memwr$\memory$regfile.v:32$202_EN[31:0]$209 [0] $0$memwr$\memory$regfile.v:32$202_EN[31:0]$209 [0] $0$memwr$\memory$regfile.v:32$202_EN[31:0]$209 [0] $0$memwr$\memory$regfile.v:32$202_EN[31:0]$209 [0] $0$memwr$\memory$regfile.v:32$202_EN[31:0]$209 [0] $0$memwr$\memory$regfile.v:32$202_EN[31:0]$209 [0] $0$memwr$\memory$regfile.v:32$202_EN[31:0]$209 [0] $0$memwr$\memory$regfile.v:32$202_EN[31:0]$209 [0] $0$memwr$\memory$regfile.v:32$202_EN[31:0]$209 [0] $0$memwr$\memory$regfile.v:32$202_EN[31:0]$209 [0] }
+  Optimizing cells in module \regfile.
+Performed a total of 3 changes.
+
+4.5.5.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\alu32'.
+<suppressed ~3 debug messages>
+Finding identical cells in module `\cpu'.
+Finding identical cells in module `\regfile'.
+Removed a total of 1 cells.
+
+4.5.5.6. Executing OPT_RMDFF pass (remove dff with constant values).
+
+4.5.5.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \alu32..
+Finding unused cells or wires in module \cpu..
+Finding unused cells or wires in module \regfile..
+Removed 0 unused cells and 32 unused wires.
+<suppressed ~2 debug messages>
+
+4.5.5.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module alu32.
+Optimizing module cpu.
+Optimizing module regfile.
+
+4.5.5.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.5.5.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \alu32..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \cpu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \regfile..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~17 debug messages>
+
+4.5.5.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \alu32.
+    New ctrl vector for $pmux cell $procmux$317: { $procmux$328_CMP $procmux$327_CMP $procmux$326_CMP $procmux$325_CMP $procmux$324_CMP $procmux$323_CMP $auto$opt_reduce.cc:132:opt_mux$369 $procmux$320_CMP $procmux$319_CMP $procmux$318_CMP }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:126:opt_mux$368: { $procmux$321_CMP $procmux$322_CMP }
+  Optimizing cells in module \alu32.
+  Optimizing cells in module \cpu.
+  Optimizing cells in module \regfile.
+Performed a total of 2 changes.
+
+4.5.5.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\alu32'.
+Finding identical cells in module `\cpu'.
+Finding identical cells in module `\regfile'.
+Removed a total of 0 cells.
+
+4.5.5.13. Executing OPT_RMDFF pass (remove dff with constant values).
+
+4.5.5.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \alu32..
+Finding unused cells or wires in module \cpu..
+Finding unused cells or wires in module \regfile..
+
+4.5.5.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module alu32.
+Optimizing module cpu.
+Optimizing module regfile.
+
+4.5.5.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.5.5.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \alu32..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \cpu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \regfile..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~17 debug messages>
+
+4.5.5.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \alu32.
+  Optimizing cells in module \cpu.
+  Optimizing cells in module \regfile.
+Performed a total of 0 changes.
+
+4.5.5.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\alu32'.
+Finding identical cells in module `\cpu'.
+Finding identical cells in module `\regfile'.
+Removed a total of 0 cells.
+
+4.5.5.20. Executing OPT_RMDFF pass (remove dff with constant values).
+
+4.5.5.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \alu32..
+Finding unused cells or wires in module \cpu..
+Finding unused cells or wires in module \regfile..
+
+4.5.5.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module alu32.
+Optimizing module cpu.
+Optimizing module regfile.
+
+4.5.5.23. Finished OPT passes. (There is nothing left to do.)
+
+4.5.6. Executing WREDUCE pass (reducing word size of cells).
+Removed top 31 bits (of 32) from port B of cell alu32.$add$alu32.v:16$127 ($add).
+Removed top 31 bits (of 32) from mux cell alu32.$ternary$alu32.v:20$132 ($mux).
+Removed top 2 bits (of 6) from port B of cell alu32.$procmux$320_CMP0 ($eq).
+Removed top 2 bits (of 6) from port B of cell alu32.$procmux$318_CMP0 ($eq).
+Removed top 2 bits (of 6) from port B of cell alu32.$procmux$319_CMP0 ($eq).
+Removed top 3 bits (of 6) from port B of cell alu32.$procmux$321_CMP0 ($eq).
+Removed top 3 bits (of 6) from port B of cell alu32.$procmux$322_CMP0 ($eq).
+Removed top 3 bits (of 6) from port B of cell alu32.$procmux$323_CMP0 ($eq).
+Removed top 3 bits (of 6) from port B of cell alu32.$procmux$324_CMP0 ($eq).
+Removed top 4 bits (of 6) from port B of cell alu32.$procmux$325_CMP0 ($eq).
+Removed top 4 bits (of 6) from port B of cell alu32.$procmux$326_CMP0 ($eq).
+Removed top 5 bits (of 6) from port B of cell alu32.$procmux$327_CMP0 ($eq).
+Removed top 31 bits (of 32) from wire alu32.$ternary$alu32.v:20$132_Y.
+Removed top 2 bits (of 3) from port B of cell cpu.$eq$cpu.v:117$9 ($eq).
+Removed top 3 bits (of 5) from port B of cell cpu.$eq$cpu.v:128$32 ($eq).
+Removed top 2 bits (of 5) from port B of cell cpu.$eq$cpu.v:129$34 ($eq).
+Removed top 2 bits (of 5) from port B of cell cpu.$eq$cpu.v:130$36 ($eq).
+Removed top 29 bits (of 32) from port B of cell cpu.$add$cpu.v:130$37 ($add).
+Removed top 1 bits (of 2) from port B of cell cpu.$eq$cpu.v:135$41 ($eq).
+Removed top 3 bits (of 5) from port B of cell cpu.$eqx$cpu.v:137$43 ($eqx).
+Removed top 1 bits (of 5) from port B of cell cpu.$eqx$cpu.v:161$46 ($eqx).
+Removed top 7 bits (of 12) from mux cell cpu.$ternary$cpu.v:161$47 ($mux).
+Removed top 1 bits (of 5) from port B of cell cpu.$eq$cpu.v:166$51 ($eq).
+Removed top 1 bits (of 2) from port B of cell cpu.$eq$cpu.v:168$53 ($eq).
+Removed top 24 bits (of 32) from mux cell cpu.$ternary$cpu.v:170$59 ($mux).
+Removed top 1 bits (of 5) from port B of cell cpu.$nex$cpu.v:189$76 ($nex).
+Removed top 1 bits (of 3) from port B of cell cpu.$eq$cpu.v:192$93 ($eq).
+Removed top 28 bits (of 32) from mux cell cpu.$ternary$cpu.v:192$95 ($mux).
+Removed top 28 bits (of 32) from mux cell cpu.$ternary$cpu.v:192$97 ($mux).
+Removed top 4 bits (of 5) from port B of cell cpu.$nex$cpu.v:197$98 ($nex).
+Removed top 3 bits (of 5) from port B of cell cpu.$nex$cpu.v:197$99 ($nex).
+Removed top 31 bits (of 32) from mux cell cpu.$ternary$cpu.v:197$103 ($mux).
+Removed top 1 bits (of 5) from port B of cell cpu.$eq$cpu.v:198$104 ($eq).
+Removed top 4 bits (of 5) from port B of cell cpu.$eq$cpu.v:199$106 ($eq).
+Removed top 3 bits (of 5) from port B of cell cpu.$eq$cpu.v:199$107 ($eq).
+Removed top 2 bits (of 5) from port B of cell cpu.$eq$cpu.v:200$109 ($eq).
+Removed top 2 bits (of 5) from port B of cell cpu.$eq$cpu.v:201$110 ($eq).
+Removed top 2 bits (of 6) from mux cell cpu.$procmux$336 ($pmux).
+Removed top 1 bits (of 4) from port B of cell cpu.$procmux$338_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell cpu.$procmux$340_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell cpu.$procmux$350_CMP0 ($eq).
+Removed top 1 bits (of 5) from mux cell cpu.$procmux$349 ($pmux).
+Removed top 5 bits (of 7) from port B of cell cpu.$procmux$351_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell cpu.$procmux$354_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell cpu.$procmux$355_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell cpu.$procmux$357_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell cpu.$procmux$358_CMP0 ($eq).
+Removed top 28 bits (of 32) from mux cell cpu.$ternary$cpu.v:192$96 ($mux).
+Removed top 24 bits (of 32) from wire cpu.$ternary$cpu.v:170$59_Y.
+Removed top 28 bits (of 32) from wire cpu.$ternary$cpu.v:192$95_Y.
+Removed top 28 bits (of 32) from wire cpu.$ternary$cpu.v:192$96_Y.
+Removed top 27 address bits (of 32) from memory init port regfile.$meminit$\memory$regfile.v:20$212 (memory).
+Removed top 27 address bits (of 32) from memory init port regfile.$meminit$\memory$regfile.v:20$213 (memory).
+Removed top 27 address bits (of 32) from memory init port regfile.$meminit$\memory$regfile.v:20$214 (memory).
+Removed top 27 address bits (of 32) from memory init port regfile.$meminit$\memory$regfile.v:20$215 (memory).
+Removed top 27 address bits (of 32) from memory init port regfile.$meminit$\memory$regfile.v:20$216 (memory).
+Removed top 27 address bits (of 32) from memory init port regfile.$meminit$\memory$regfile.v:20$217 (memory).
+Removed top 27 address bits (of 32) from memory init port regfile.$meminit$\memory$regfile.v:20$218 (memory).
+Removed top 27 address bits (of 32) from memory init port regfile.$meminit$\memory$regfile.v:20$219 (memory).
+Removed top 27 address bits (of 32) from memory init port regfile.$meminit$\memory$regfile.v:20$220 (memory).
+Removed top 27 address bits (of 32) from memory init port regfile.$meminit$\memory$regfile.v:20$221 (memory).
+Removed top 27 address bits (of 32) from memory init port regfile.$meminit$\memory$regfile.v:20$222 (memory).
+Removed top 27 address bits (of 32) from memory init port regfile.$meminit$\memory$regfile.v:20$223 (memory).
+Removed top 27 address bits (of 32) from memory init port regfile.$meminit$\memory$regfile.v:20$224 (memory).
+Removed top 27 address bits (of 32) from memory init port regfile.$meminit$\memory$regfile.v:20$225 (memory).
+Removed top 27 address bits (of 32) from memory init port regfile.$meminit$\memory$regfile.v:20$226 (memory).
+Removed top 27 address bits (of 32) from memory init port regfile.$meminit$\memory$regfile.v:20$227 (memory).
+Removed top 27 address bits (of 32) from memory init port regfile.$meminit$\memory$regfile.v:20$228 (memory).
+Removed top 27 address bits (of 32) from memory init port regfile.$meminit$\memory$regfile.v:20$229 (memory).
+Removed top 27 address bits (of 32) from memory init port regfile.$meminit$\memory$regfile.v:20$230 (memory).
+Removed top 27 address bits (of 32) from memory init port regfile.$meminit$\memory$regfile.v:20$231 (memory).
+Removed top 27 address bits (of 32) from memory init port regfile.$meminit$\memory$regfile.v:20$232 (memory).
+Removed top 27 address bits (of 32) from memory init port regfile.$meminit$\memory$regfile.v:20$233 (memory).
+Removed top 27 address bits (of 32) from memory init port regfile.$meminit$\memory$regfile.v:20$234 (memory).
+Removed top 27 address bits (of 32) from memory init port regfile.$meminit$\memory$regfile.v:20$235 (memory).
+Removed top 27 address bits (of 32) from memory init port regfile.$meminit$\memory$regfile.v:20$236 (memory).
+Removed top 27 address bits (of 32) from memory init port regfile.$meminit$\memory$regfile.v:20$237 (memory).
+Removed top 27 address bits (of 32) from memory init port regfile.$meminit$\memory$regfile.v:20$238 (memory).
+Removed top 27 address bits (of 32) from memory init port regfile.$meminit$\memory$regfile.v:20$239 (memory).
+Removed top 27 address bits (of 32) from memory init port regfile.$meminit$\memory$regfile.v:20$240 (memory).
+Removed top 27 address bits (of 32) from memory init port regfile.$meminit$\memory$regfile.v:20$241 (memory).
+Removed top 27 address bits (of 32) from memory init port regfile.$meminit$\memory$regfile.v:20$242 (memory).
+Removed top 27 address bits (of 32) from memory init port regfile.$meminit$\memory$regfile.v:20$243 (memory).
+Removed top 4 bits (of 5) from port B of cell regfile.$nex$regfile.v:31$210 ($nex).
+Removed cell regfile.$procmux$312 ($mux).
+Removed cell regfile.$procmux$314 ($mux).
+Removed top 31 bits (of 32) from FF cell regfile.$procdff$364 ($dff).
+
+4.5.7. Executing PEEPOPT pass (run peephole optimizers).
+
+4.5.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \alu32..
+Finding unused cells or wires in module \cpu..
+Finding unused cells or wires in module \regfile..
+Removed 0 unused cells and 8 unused wires.
+<suppressed ~3 debug messages>
+
+4.5.9. Executing TECHMAP pass (map to technology primitives).
+
+4.5.9.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/cmp2lut.v
+Parsing Verilog input from `/usr/bin/../share/yosys/cmp2lut.v' to AST representation.
+Generating RTLIL representation for module `\_90_lut_cmp_'.
+Successfully finished Verilog frontend.
+
+4.5.9.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~744 debug messages>
+
+4.5.10. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module alu32:
+  creating $macc model for $add$alu32.v:15$124 ($add).
+  creating $macc model for $add$alu32.v:16$126 ($add).
+  creating $macc model for $add$alu32.v:16$127 ($add).
+  merging $macc model for $add$alu32.v:16$126 into $add$alu32.v:16$127.
+  creating $alu model for $macc $add$alu32.v:16$127.
+  creating $alu model for $macc $add$alu32.v:15$124.
+  creating $alu model for $lt$alu32.v:20$131 ($lt): new $alu
+  creating $alu cell for $lt$alu32.v:20$131: $auto$alumacc.cc:474:replace_alu$375
+  creating $alu cell for $add$alu32.v:15$124: $auto$alumacc.cc:474:replace_alu$380
+  creating $alu cell for $add$alu32.v:16$127: $auto$alumacc.cc:474:replace_alu$383
+  created 3 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module cpu:
+  creating $macc model for $add$cpu.v:125$31 ($add).
+  creating $macc model for $add$cpu.v:128$33 ($add).
+  creating $macc model for $add$cpu.v:129$35 ($add).
+  creating $macc model for $add$cpu.v:130$37 ($add).
+  creating $macc model for $add$cpu.v:162$48 ($add).
+  creating $macc model for $add$cpu.v:201$111 ($add).
+  creating $alu model for $macc $add$cpu.v:201$111.
+  creating $alu model for $macc $add$cpu.v:162$48.
+  creating $alu model for $macc $add$cpu.v:130$37.
+  creating $alu model for $macc $add$cpu.v:129$35.
+  creating $alu model for $macc $add$cpu.v:128$33.
+  creating $alu model for $macc $add$cpu.v:125$31.
+  creating $alu model for $ge$cpu.v:119$16 ($ge): new $alu
+  creating $alu model for $lt$cpu.v:118$13 ($lt): merged with $ge$cpu.v:119$16.
+  creating $alu model for $eq$cpu.v:116$7 ($eq): merged with $ge$cpu.v:119$16.
+  creating $alu model for $ne$cpu.v:117$10 ($ne): merged with $ge$cpu.v:119$16.
+  creating $alu cell for $ge$cpu.v:119$16, $lt$cpu.v:118$13, $eq$cpu.v:116$7, $ne$cpu.v:117$10: $auto$alumacc.cc:474:replace_alu$387
+  creating $alu cell for $add$cpu.v:125$31: $auto$alumacc.cc:474:replace_alu$402
+  creating $alu cell for $add$cpu.v:128$33: $auto$alumacc.cc:474:replace_alu$405
+  creating $alu cell for $add$cpu.v:129$35: $auto$alumacc.cc:474:replace_alu$408
+  creating $alu cell for $add$cpu.v:130$37: $auto$alumacc.cc:474:replace_alu$411
+  creating $alu cell for $add$cpu.v:162$48: $auto$alumacc.cc:474:replace_alu$414
+  creating $alu cell for $add$cpu.v:201$111: $auto$alumacc.cc:474:replace_alu$417
+  created 7 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module regfile:
+  created 0 $alu and 0 $macc cells.
+
+4.5.11. Executing SHARE pass (SAT-based resource sharing).
+Found 3 cells in module alu32 that may be considered for resource sharing.
+  Analyzing resource sharing options for $sshr$alu32.v:24$137 ($sshr):
+    Found 1 activation_patterns using ctrl signal $procmux$318_CMP.
+    No candidates found.
+  Analyzing resource sharing options for $shr$alu32.v:23$136 ($shr):
+    Found 1 activation_patterns using ctrl signal $procmux$319_CMP.
+    No candidates found.
+  Analyzing resource sharing options for $shl$alu32.v:22$135 ($shl):
+    Found 1 activation_patterns using ctrl signal $procmux$320_CMP.
+    No candidates found.
+
+4.5.12. Executing OPT pass (performing simple optimizations).
+
+4.5.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module alu32.
+<suppressed ~1 debug messages>
+Optimizing module cpu.
+Optimizing module regfile.
+
+4.5.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\alu32'.
+Finding identical cells in module `\cpu'.
+Finding identical cells in module `\regfile'.
+Removed a total of 0 cells.
+
+4.5.12.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \alu32..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \cpu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \regfile..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~15 debug messages>
+
+4.5.12.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \alu32.
+  Optimizing cells in module \cpu.
+    New input vector for $reduce_or cell $auto$alumacc.cc:509:replace_alu$398: { $auto$rtlil.cc:1832:Not$397 $auto$rtlil.cc:1835:ReduceAnd$391 }
+    New input vector for $reduce_and cell $auto$alumacc.cc:64:get_eq$390: { $auto$alumacc.cc:490:replace_alu$388 [0] $auto$alumacc.cc:490:replace_alu$388 [1] $auto$alumacc.cc:490:replace_alu$388 [2] $auto$alumacc.cc:490:replace_alu$388 [3] $auto$alumacc.cc:490:replace_alu$388 [4] $auto$alumacc.cc:490:replace_alu$388 [5] $auto$alumacc.cc:490:replace_alu$388 [6] $auto$alumacc.cc:490:replace_alu$388 [7] $auto$alumacc.cc:490:replace_alu$388 [8] $auto$alumacc.cc:490:replace_alu$388 [9] $auto$alumacc.cc:490:replace_alu$388 [10] $auto$alumacc.cc:490:replace_alu$388 [11] $auto$alumacc.cc:490:replace_alu$388 [12] $auto$alumacc.cc:490:replace_alu$388 [13] $auto$alumacc.cc:490:replace_alu$388 [14] $auto$alumacc.cc:490:replace_alu$388 [15] $auto$alumacc.cc:490:replace_alu$388 [16] $auto$alumacc.cc:490:replace_alu$388 [17] $auto$alumacc.cc:490:replace_alu$388 [18] $auto$alumacc.cc:490:replace_alu$388 [19] $auto$alumacc.cc:490:replace_alu$388 [20] $auto$alumacc.cc:490:replace_alu$388 [21] $auto$alumacc.cc:490:replace_alu$388 [22] $auto$alumacc.cc:490:replace_alu$388 [23] $auto$alumacc.cc:490:replace_alu$388 [24] $auto$alumacc.cc:490:replace_alu$388 [25] $auto$alumacc.cc:490:replace_alu$388 [26] $auto$alumacc.cc:490:replace_alu$388 [27] $auto$alumacc.cc:490:replace_alu$388 [28] $auto$alumacc.cc:490:replace_alu$388 [29] $auto$alumacc.cc:490:replace_alu$388 [30] $auto$alumacc.cc:490:replace_alu$388 [31] }
+  Optimizing cells in module \cpu.
+  Optimizing cells in module \regfile.
+Performed a total of 2 changes.
+
+4.5.12.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\alu32'.
+Finding identical cells in module `\cpu'.
+Finding identical cells in module `\regfile'.
+Removed a total of 0 cells.
+
+4.5.12.6. Executing OPT_RMDFF pass (remove dff with constant values).
+
+4.5.12.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \alu32..
+Finding unused cells or wires in module \cpu..
+Finding unused cells or wires in module \regfile..
+Removed 2 unused cells and 7 unused wires.
+<suppressed ~4 debug messages>
+
+4.5.12.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module alu32.
+Optimizing module cpu.
+Optimizing module regfile.
+
+4.5.12.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.5.12.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \alu32..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \cpu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \regfile..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~15 debug messages>
+
+4.5.12.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \alu32.
+  Optimizing cells in module \cpu.
+  Optimizing cells in module \regfile.
+Performed a total of 0 changes.
+
+4.5.12.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\alu32'.
+Finding identical cells in module `\cpu'.
+Finding identical cells in module `\regfile'.
+Removed a total of 0 cells.
+
+4.5.12.13. Executing OPT_RMDFF pass (remove dff with constant values).
+
+4.5.12.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \alu32..
+Finding unused cells or wires in module \cpu..
+Finding unused cells or wires in module \regfile..
+
+4.5.12.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module alu32.
+Optimizing module cpu.
+Optimizing module regfile.
+
+4.5.12.16. Finished OPT passes. (There is nothing left to do.)
+
+4.5.13. Executing FSM pass (extract and optimize FSM).
+
+4.5.13.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+4.5.13.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+4.5.13.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+4.5.13.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \alu32..
+Finding unused cells or wires in module \cpu..
+Finding unused cells or wires in module \regfile..
+
+4.5.13.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+4.5.13.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+4.5.13.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+4.5.13.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+4.5.14. Executing OPT pass (performing simple optimizations).
+
+4.5.14.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module alu32.
+Optimizing module cpu.
+Optimizing module regfile.
+
+4.5.14.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\alu32'.
+Finding identical cells in module `\cpu'.
+Finding identical cells in module `\regfile'.
+Removed a total of 0 cells.
+
+4.5.14.3. Executing OPT_RMDFF pass (remove dff with constant values).
+
+4.5.14.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \alu32..
+Finding unused cells or wires in module \cpu..
+Finding unused cells or wires in module \regfile..
+
+4.5.14.5. Finished fast OPT passes.
+
+4.5.15. Executing MEMORY pass.
+
+4.5.15.1. Executing MEMORY_DFF pass (merging $dff cells to $memrd and $memwr).
+Checking cell `$memwr$\memory$regfile.v:32$244' in module `\regfile': merged $dff to cell.
+Checking cell `$memrd$\memory$regfile.v:25$203' in module `\regfile': no (compatible) $dff found.
+Checking cell `$memrd$\memory$regfile.v:26$204' in module `\regfile': no (compatible) $dff found.
+Checking cell `$memrd$\memory$regfile.v:27$205' in module `\regfile': no (compatible) $dff found.
+
+4.5.15.2. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \alu32..
+Finding unused cells or wires in module \cpu..
+Finding unused cells or wires in module \regfile..
+Removed 3 unused cells and 3 unused wires.
+<suppressed ~4 debug messages>
+
+4.5.15.3. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+4.5.15.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \alu32..
+Finding unused cells or wires in module \cpu..
+Finding unused cells or wires in module \regfile..
+
+4.5.15.5. Executing MEMORY_COLLECT pass (generating $mem cells).
+Collecting $memrd, $memwr and $meminit for memory `\memory' in module `\regfile':
+  $meminit$\memory$regfile.v:20$212 ($meminit)
+  $meminit$\memory$regfile.v:20$213 ($meminit)
+  $meminit$\memory$regfile.v:20$214 ($meminit)
+  $meminit$\memory$regfile.v:20$215 ($meminit)
+  $meminit$\memory$regfile.v:20$216 ($meminit)
+  $meminit$\memory$regfile.v:20$217 ($meminit)
+  $meminit$\memory$regfile.v:20$218 ($meminit)
+  $meminit$\memory$regfile.v:20$219 ($meminit)
+  $meminit$\memory$regfile.v:20$220 ($meminit)
+  $meminit$\memory$regfile.v:20$221 ($meminit)
+  $meminit$\memory$regfile.v:20$222 ($meminit)
+  $meminit$\memory$regfile.v:20$223 ($meminit)
+  $meminit$\memory$regfile.v:20$224 ($meminit)
+  $meminit$\memory$regfile.v:20$225 ($meminit)
+  $meminit$\memory$regfile.v:20$226 ($meminit)
+  $meminit$\memory$regfile.v:20$227 ($meminit)
+  $meminit$\memory$regfile.v:20$228 ($meminit)
+  $meminit$\memory$regfile.v:20$229 ($meminit)
+  $meminit$\memory$regfile.v:20$230 ($meminit)
+  $meminit$\memory$regfile.v:20$231 ($meminit)
+  $meminit$\memory$regfile.v:20$232 ($meminit)
+  $meminit$\memory$regfile.v:20$233 ($meminit)
+  $meminit$\memory$regfile.v:20$234 ($meminit)
+  $meminit$\memory$regfile.v:20$235 ($meminit)
+  $meminit$\memory$regfile.v:20$236 ($meminit)
+  $meminit$\memory$regfile.v:20$237 ($meminit)
+  $meminit$\memory$regfile.v:20$238 ($meminit)
+  $meminit$\memory$regfile.v:20$239 ($meminit)
+  $meminit$\memory$regfile.v:20$240 ($meminit)
+  $meminit$\memory$regfile.v:20$241 ($meminit)
+  $meminit$\memory$regfile.v:20$242 ($meminit)
+  $meminit$\memory$regfile.v:20$243 ($meminit)
+  $memwr$\memory$regfile.v:32$244 ($memwr)
+  $memrd$\memory$regfile.v:25$203 ($memrd)
+  $memrd$\memory$regfile.v:26$204 ($memrd)
+  $memrd$\memory$regfile.v:27$205 ($memrd)
+
+4.5.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \alu32..
+Finding unused cells or wires in module \cpu..
+Finding unused cells or wires in module \regfile..
+
+4.6. Executing MEMORY_BRAM pass (mapping $mem cells to block memories).
+Processing regfile.memory:
+  Properties: ports=4 bits=1024 rports=3 wports=1 dbits=32 abits=5 words=32
+  Checking rule #1 for bram type $__XILINX_RAMB36_SDP (variant 1):
+    Bram geometry: abits=9 dbits=72 wports=0 rports=0
+    Estimated number of duplicates for more read ports: dups=1
+    Metrics for $__XILINX_RAMB36_SDP: awaste=480 dwaste=40 bwaste=35840 waste=35840 efficiency=2
+    Rule #1 for bram type $__XILINX_RAMB36_SDP (variant 1) rejected: requirement 'min efficiency 5' not met.
+  Checking rule #2 for bram type $__XILINX_RAMB18_SDP (variant 1):
+    Bram geometry: abits=9 dbits=36 wports=0 rports=0
+    Estimated number of duplicates for more read ports: dups=1
+    Metrics for $__XILINX_RAMB18_SDP: awaste=480 dwaste=4 bwaste=17408 waste=17408 efficiency=5
+    Rule #2 for bram type $__XILINX_RAMB18_SDP (variant 1) rejected: requirement 'min bits 4096' not met.
+  Checking rule #3 for bram type $__XILINX_RAMB36_TDP (variant 1):
+    Bram geometry: abits=10 dbits=36 wports=0 rports=0
+    Estimated number of duplicates for more read ports: dups=1
+    Metrics for $__XILINX_RAMB36_TDP: awaste=992 dwaste=4 bwaste=35840 waste=35840 efficiency=2
+    Rule #3 for bram type $__XILINX_RAMB36_TDP (variant 1) rejected: requirement 'min efficiency 5' not met.
+  Checking rule #3 for bram type $__XILINX_RAMB36_TDP (variant 2):
+    Bram geometry: abits=11 dbits=18 wports=0 rports=0
+    Estimated number of duplicates for more read ports: dups=1
+    Metrics for $__XILINX_RAMB36_TDP: awaste=2016 dwaste=4 bwaste=36416 waste=36416 efficiency=1
+    Rule #3 for bram type $__XILINX_RAMB36_TDP (variant 2) rejected: requirement 'min efficiency 5' not met.
+  Checking rule #3 for bram type $__XILINX_RAMB36_TDP (variant 3):
+    Bram geometry: abits=12 dbits=9 wports=0 rports=0
+    Estimated number of duplicates for more read ports: dups=1
+    Metrics for $__XILINX_RAMB36_TDP: awaste=4064 dwaste=4 bwaste=36704 waste=36704 efficiency=0
+    Rule #3 for bram type $__XILINX_RAMB36_TDP (variant 3) rejected: requirement 'min efficiency 5' not met.
+  Checking rule #3 for bram type $__XILINX_RAMB36_TDP (variant 4):
+    Bram geometry: abits=13 dbits=4 wports=0 rports=0
+    Estimated number of duplicates for more read ports: dups=1
+    Metrics for $__XILINX_RAMB36_TDP: awaste=8160 dwaste=0 bwaste=32640 waste=32640 efficiency=0
+    Rule #3 for bram type $__XILINX_RAMB36_TDP (variant 4) rejected: requirement 'min efficiency 5' not met.
+  Checking rule #3 for bram type $__XILINX_RAMB36_TDP (variant 5):
+    Bram geometry: abits=14 dbits=2 wports=0 rports=0
+    Estimated number of duplicates for more read ports: dups=1
+    Metrics for $__XILINX_RAMB36_TDP: awaste=16352 dwaste=0 bwaste=32704 waste=32704 efficiency=0
+    Rule #3 for bram type $__XILINX_RAMB36_TDP (variant 5) rejected: requirement 'min efficiency 5' not met.
+  Checking rule #3 for bram type $__XILINX_RAMB36_TDP (variant 6):
+    Bram geometry: abits=15 dbits=1 wports=0 rports=0
+    Estimated number of duplicates for more read ports: dups=1
+    Metrics for $__XILINX_RAMB36_TDP: awaste=32736 dwaste=0 bwaste=32736 waste=32736 efficiency=0
+    Rule #3 for bram type $__XILINX_RAMB36_TDP (variant 6) rejected: requirement 'min efficiency 5' not met.
+  Checking rule #4 for bram type $__XILINX_RAMB18_TDP (variant 1):
+    Bram geometry: abits=10 dbits=18 wports=0 rports=0
+    Estimated number of duplicates for more read ports: dups=1
+    Metrics for $__XILINX_RAMB18_TDP: awaste=992 dwaste=4 bwaste=17984 waste=17984 efficiency=2
+    Rule #4 for bram type $__XILINX_RAMB18_TDP (variant 1) rejected: requirement 'min efficiency 5' not met.
+  Checking rule #4 for bram type $__XILINX_RAMB18_TDP (variant 2):
+    Bram geometry: abits=11 dbits=9 wports=0 rports=0
+    Estimated number of duplicates for more read ports: dups=1
+    Metrics for $__XILINX_RAMB18_TDP: awaste=2016 dwaste=4 bwaste=18272 waste=18272 efficiency=1
+    Rule #4 for bram type $__XILINX_RAMB18_TDP (variant 2) rejected: requirement 'min efficiency 5' not met.
+  Checking rule #4 for bram type $__XILINX_RAMB18_TDP (variant 3):
+    Bram geometry: abits=12 dbits=4 wports=0 rports=0
+    Estimated number of duplicates for more read ports: dups=1
+    Metrics for $__XILINX_RAMB18_TDP: awaste=4064 dwaste=0 bwaste=16256 waste=16256 efficiency=0
+    Rule #4 for bram type $__XILINX_RAMB18_TDP (variant 3) rejected: requirement 'min efficiency 5' not met.
+  Checking rule #4 for bram type $__XILINX_RAMB18_TDP (variant 4):
+    Bram geometry: abits=13 dbits=2 wports=0 rports=0
+    Estimated number of duplicates for more read ports: dups=1
+    Metrics for $__XILINX_RAMB18_TDP: awaste=8160 dwaste=0 bwaste=16320 waste=16320 efficiency=0
+    Rule #4 for bram type $__XILINX_RAMB18_TDP (variant 4) rejected: requirement 'min efficiency 5' not met.
+  Checking rule #4 for bram type $__XILINX_RAMB18_TDP (variant 5):
+    Bram geometry: abits=14 dbits=1 wports=0 rports=0
+    Estimated number of duplicates for more read ports: dups=1
+    Metrics for $__XILINX_RAMB18_TDP: awaste=16352 dwaste=0 bwaste=16352 waste=16352 efficiency=0
+    Rule #4 for bram type $__XILINX_RAMB18_TDP (variant 5) rejected: requirement 'min efficiency 5' not met.
+  No acceptable bram resources found.
+
+4.7. Executing TECHMAP pass (map to technology primitives).
+
+4.7.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/xilinx/brams_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/xilinx/brams_map.v' to AST representation.
+Generating RTLIL representation for module `\$__XILINX_RAMB36_SDP'.
+Generating RTLIL representation for module `\$__XILINX_RAMB18_SDP'.
+Generating RTLIL representation for module `\$__XILINX_RAMB36_TDP'.
+Generating RTLIL representation for module `\$__XILINX_RAMB18_TDP'.
+Successfully finished Verilog frontend.
+
+4.7.2. Continuing TECHMAP pass.
+No more expansions possible.
+
+4.8. Executing MEMORY_BRAM pass (mapping $mem cells to block memories).
+Processing regfile.memory:
+  Properties: ports=4 bits=1024 rports=3 wports=1 dbits=32 abits=5 words=32
+  Checking rule #1 for bram type $__XILINX_RAM32X1D (variant 1):
+    Bram geometry: abits=5 dbits=1 wports=0 rports=0
+    Estimated number of duplicates for more read ports: dups=1
+    Metrics for $__XILINX_RAM32X1D: awaste=0 dwaste=0 bwaste=0 waste=0 efficiency=100
+    Rule #1 for bram type $__XILINX_RAM32X1D (variant 1) accepted.
+    Mapping to bram type $__XILINX_RAM32X1D (variant 1):
+      Write port #0 is in clock domain \clk.
+        Mapped to bram port B1.
+      Read port #0 is in clock domain !~async~.
+        Mapped to bram port A1.1.
+      Read port #1 is in clock domain !~async~.
+        Failed to map read port #1.
+      Growing more read ports by duplicating bram cells.
+      Read port #0 is in clock domain !~async~.
+        Mapped to bram port A1.1.
+      Read port #1 is in clock domain !~async~.
+        Mapped to bram port A1.2.
+      Read port #2 is in clock domain !~async~.
+        Failed to map read port #2.
+      Growing more read ports by duplicating bram cells.
+      Read port #0 is in clock domain !~async~.
+        Mapped to bram port A1.1.
+      Read port #1 is in clock domain !~async~.
+        Mapped to bram port A1.2.
+      Read port #2 is in clock domain !~async~.
+        Mapped to bram port A1.3.
+      Updated properties: dups=3 waste=0 efficiency=33
+      Storing for later selection.
+  Checking rule #2 for bram type $__XILINX_RAM64X1D (variant 1):
+    Bram geometry: abits=6 dbits=1 wports=0 rports=0
+    Estimated number of duplicates for more read ports: dups=1
+    Metrics for $__XILINX_RAM64X1D: awaste=32 dwaste=0 bwaste=32 waste=32 efficiency=50
+    Rule #2 for bram type $__XILINX_RAM64X1D (variant 1) accepted.
+    Mapping to bram type $__XILINX_RAM64X1D (variant 1):
+      Write port #0 is in clock domain \clk.
+        Mapped to bram port B1.
+      Read port #0 is in clock domain !~async~.
+        Mapped to bram port A1.1.
+      Read port #1 is in clock domain !~async~.
+        Failed to map read port #1.
+      Growing more read ports by duplicating bram cells.
+      Read port #0 is in clock domain !~async~.
+        Mapped to bram port A1.1.
+      Read port #1 is in clock domain !~async~.
+        Mapped to bram port A1.2.
+      Read port #2 is in clock domain !~async~.
+        Failed to map read port #2.
+      Growing more read ports by duplicating bram cells.
+      Read port #0 is in clock domain !~async~.
+        Mapped to bram port A1.1.
+      Read port #1 is in clock domain !~async~.
+        Mapped to bram port A1.2.
+      Read port #2 is in clock domain !~async~.
+        Mapped to bram port A1.3.
+      Updated properties: dups=3 waste=96 efficiency=16
+      Storing for later selection.
+  Checking rule #3 for bram type $__XILINX_RAM128X1D (variant 1):
+    Bram geometry: abits=7 dbits=1 wports=0 rports=0
+    Estimated number of duplicates for more read ports: dups=1
+    Metrics for $__XILINX_RAM128X1D: awaste=96 dwaste=0 bwaste=96 waste=96 efficiency=25
+    Rule #3 for bram type $__XILINX_RAM128X1D (variant 1) accepted.
+    Mapping to bram type $__XILINX_RAM128X1D (variant 1):
+      Write port #0 is in clock domain \clk.
+        Mapped to bram port B1.
+      Read port #0 is in clock domain !~async~.
+        Mapped to bram port A1.1.
+      Read port #1 is in clock domain !~async~.
+        Failed to map read port #1.
+      Growing more read ports by duplicating bram cells.
+      Read port #0 is in clock domain !~async~.
+        Mapped to bram port A1.1.
+      Read port #1 is in clock domain !~async~.
+        Mapped to bram port A1.2.
+      Read port #2 is in clock domain !~async~.
+        Failed to map read port #2.
+      Growing more read ports by duplicating bram cells.
+      Read port #0 is in clock domain !~async~.
+        Mapped to bram port A1.1.
+      Read port #1 is in clock domain !~async~.
+        Mapped to bram port A1.2.
+      Read port #2 is in clock domain !~async~.
+        Mapped to bram port A1.3.
+      Updated properties: dups=3 waste=288 efficiency=8
+      Storing for later selection.
+  Selecting best of 3 rules:
+    Efficiency for rule 3.1: efficiency=8, cells=96, acells=1
+    Efficiency for rule 2.1: efficiency=16, cells=96, acells=1
+    Efficiency for rule 1.1: efficiency=33, cells=96, acells=1
+    Selected rule 1.1 with efficiency 33.
+    Mapping to bram type $__XILINX_RAM32X1D (variant 1):
+      Write port #0 is in clock domain \clk.
+        Mapped to bram port B1.
+      Read port #0 is in clock domain !~async~.
+        Mapped to bram port A1.1.
+      Read port #1 is in clock domain !~async~.
+        Failed to map read port #1.
+      Growing more read ports by duplicating bram cells.
+      Read port #0 is in clock domain !~async~.
+        Mapped to bram port A1.1.
+      Read port #1 is in clock domain !~async~.
+        Mapped to bram port A1.2.
+      Read port #2 is in clock domain !~async~.
+        Failed to map read port #2.
+      Growing more read ports by duplicating bram cells.
+      Read port #0 is in clock domain !~async~.
+        Mapped to bram port A1.1.
+      Read port #1 is in clock domain !~async~.
+        Mapped to bram port A1.2.
+      Read port #2 is in clock domain !~async~.
+        Mapped to bram port A1.3.
+      Creating $__XILINX_RAM32X1D cell at grid position <0 0 0>: memory.0.0.0
+      Creating $__XILINX_RAM32X1D cell at grid position <0 0 1>: memory.0.0.1
+      Creating $__XILINX_RAM32X1D cell at grid position <0 0 2>: memory.0.0.2
+      Creating $__XILINX_RAM32X1D cell at grid position <1 0 0>: memory.1.0.0
+      Creating $__XILINX_RAM32X1D cell at grid position <1 0 1>: memory.1.0.1
+      Creating $__XILINX_RAM32X1D cell at grid position <1 0 2>: memory.1.0.2
+      Creating $__XILINX_RAM32X1D cell at grid position <2 0 0>: memory.2.0.0
+      Creating $__XILINX_RAM32X1D cell at grid position <2 0 1>: memory.2.0.1
+      Creating $__XILINX_RAM32X1D cell at grid position <2 0 2>: memory.2.0.2
+      Creating $__XILINX_RAM32X1D cell at grid position <3 0 0>: memory.3.0.0
+      Creating $__XILINX_RAM32X1D cell at grid position <3 0 1>: memory.3.0.1
+      Creating $__XILINX_RAM32X1D cell at grid position <3 0 2>: memory.3.0.2
+      Creating $__XILINX_RAM32X1D cell at grid position <4 0 0>: memory.4.0.0
+      Creating $__XILINX_RAM32X1D cell at grid position <4 0 1>: memory.4.0.1
+      Creating $__XILINX_RAM32X1D cell at grid position <4 0 2>: memory.4.0.2
+      Creating $__XILINX_RAM32X1D cell at grid position <5 0 0>: memory.5.0.0
+      Creating $__XILINX_RAM32X1D cell at grid position <5 0 1>: memory.5.0.1
+      Creating $__XILINX_RAM32X1D cell at grid position <5 0 2>: memory.5.0.2
+      Creating $__XILINX_RAM32X1D cell at grid position <6 0 0>: memory.6.0.0
+      Creating $__XILINX_RAM32X1D cell at grid position <6 0 1>: memory.6.0.1
+      Creating $__XILINX_RAM32X1D cell at grid position <6 0 2>: memory.6.0.2
+      Creating $__XILINX_RAM32X1D cell at grid position <7 0 0>: memory.7.0.0
+      Creating $__XILINX_RAM32X1D cell at grid position <7 0 1>: memory.7.0.1
+      Creating $__XILINX_RAM32X1D cell at grid position <7 0 2>: memory.7.0.2
+      Creating $__XILINX_RAM32X1D cell at grid position <8 0 0>: memory.8.0.0
+      Creating $__XILINX_RAM32X1D cell at grid position <8 0 1>: memory.8.0.1
+      Creating $__XILINX_RAM32X1D cell at grid position <8 0 2>: memory.8.0.2
+      Creating $__XILINX_RAM32X1D cell at grid position <9 0 0>: memory.9.0.0
+      Creating $__XILINX_RAM32X1D cell at grid position <9 0 1>: memory.9.0.1
+      Creating $__XILINX_RAM32X1D cell at grid position <9 0 2>: memory.9.0.2
+      Creating $__XILINX_RAM32X1D cell at grid position <10 0 0>: memory.10.0.0
+      Creating $__XILINX_RAM32X1D cell at grid position <10 0 1>: memory.10.0.1
+      Creating $__XILINX_RAM32X1D cell at grid position <10 0 2>: memory.10.0.2
+      Creating $__XILINX_RAM32X1D cell at grid position <11 0 0>: memory.11.0.0
+      Creating $__XILINX_RAM32X1D cell at grid position <11 0 1>: memory.11.0.1
+      Creating $__XILINX_RAM32X1D cell at grid position <11 0 2>: memory.11.0.2
+      Creating $__XILINX_RAM32X1D cell at grid position <12 0 0>: memory.12.0.0
+      Creating $__XILINX_RAM32X1D cell at grid position <12 0 1>: memory.12.0.1
+      Creating $__XILINX_RAM32X1D cell at grid position <12 0 2>: memory.12.0.2
+      Creating $__XILINX_RAM32X1D cell at grid position <13 0 0>: memory.13.0.0
+      Creating $__XILINX_RAM32X1D cell at grid position <13 0 1>: memory.13.0.1
+      Creating $__XILINX_RAM32X1D cell at grid position <13 0 2>: memory.13.0.2
+      Creating $__XILINX_RAM32X1D cell at grid position <14 0 0>: memory.14.0.0
+      Creating $__XILINX_RAM32X1D cell at grid position <14 0 1>: memory.14.0.1
+      Creating $__XILINX_RAM32X1D cell at grid position <14 0 2>: memory.14.0.2
+      Creating $__XILINX_RAM32X1D cell at grid position <15 0 0>: memory.15.0.0
+      Creating $__XILINX_RAM32X1D cell at grid position <15 0 1>: memory.15.0.1
+      Creating $__XILINX_RAM32X1D cell at grid position <15 0 2>: memory.15.0.2
+      Creating $__XILINX_RAM32X1D cell at grid position <16 0 0>: memory.16.0.0
+      Creating $__XILINX_RAM32X1D cell at grid position <16 0 1>: memory.16.0.1
+      Creating $__XILINX_RAM32X1D cell at grid position <16 0 2>: memory.16.0.2
+      Creating $__XILINX_RAM32X1D cell at grid position <17 0 0>: memory.17.0.0
+      Creating $__XILINX_RAM32X1D cell at grid position <17 0 1>: memory.17.0.1
+      Creating $__XILINX_RAM32X1D cell at grid position <17 0 2>: memory.17.0.2
+      Creating $__XILINX_RAM32X1D cell at grid position <18 0 0>: memory.18.0.0
+      Creating $__XILINX_RAM32X1D cell at grid position <18 0 1>: memory.18.0.1
+      Creating $__XILINX_RAM32X1D cell at grid position <18 0 2>: memory.18.0.2
+      Creating $__XILINX_RAM32X1D cell at grid position <19 0 0>: memory.19.0.0
+      Creating $__XILINX_RAM32X1D cell at grid position <19 0 1>: memory.19.0.1
+      Creating $__XILINX_RAM32X1D cell at grid position <19 0 2>: memory.19.0.2
+      Creating $__XILINX_RAM32X1D cell at grid position <20 0 0>: memory.20.0.0
+      Creating $__XILINX_RAM32X1D cell at grid position <20 0 1>: memory.20.0.1
+      Creating $__XILINX_RAM32X1D cell at grid position <20 0 2>: memory.20.0.2
+      Creating $__XILINX_RAM32X1D cell at grid position <21 0 0>: memory.21.0.0
+      Creating $__XILINX_RAM32X1D cell at grid position <21 0 1>: memory.21.0.1
+      Creating $__XILINX_RAM32X1D cell at grid position <21 0 2>: memory.21.0.2
+      Creating $__XILINX_RAM32X1D cell at grid position <22 0 0>: memory.22.0.0
+      Creating $__XILINX_RAM32X1D cell at grid position <22 0 1>: memory.22.0.1
+      Creating $__XILINX_RAM32X1D cell at grid position <22 0 2>: memory.22.0.2
+      Creating $__XILINX_RAM32X1D cell at grid position <23 0 0>: memory.23.0.0
+      Creating $__XILINX_RAM32X1D cell at grid position <23 0 1>: memory.23.0.1
+      Creating $__XILINX_RAM32X1D cell at grid position <23 0 2>: memory.23.0.2
+      Creating $__XILINX_RAM32X1D cell at grid position <24 0 0>: memory.24.0.0
+      Creating $__XILINX_RAM32X1D cell at grid position <24 0 1>: memory.24.0.1
+      Creating $__XILINX_RAM32X1D cell at grid position <24 0 2>: memory.24.0.2
+      Creating $__XILINX_RAM32X1D cell at grid position <25 0 0>: memory.25.0.0
+      Creating $__XILINX_RAM32X1D cell at grid position <25 0 1>: memory.25.0.1
+      Creating $__XILINX_RAM32X1D cell at grid position <25 0 2>: memory.25.0.2
+      Creating $__XILINX_RAM32X1D cell at grid position <26 0 0>: memory.26.0.0
+      Creating $__XILINX_RAM32X1D cell at grid position <26 0 1>: memory.26.0.1
+      Creating $__XILINX_RAM32X1D cell at grid position <26 0 2>: memory.26.0.2
+      Creating $__XILINX_RAM32X1D cell at grid position <27 0 0>: memory.27.0.0
+      Creating $__XILINX_RAM32X1D cell at grid position <27 0 1>: memory.27.0.1
+      Creating $__XILINX_RAM32X1D cell at grid position <27 0 2>: memory.27.0.2
+      Creating $__XILINX_RAM32X1D cell at grid position <28 0 0>: memory.28.0.0
+      Creating $__XILINX_RAM32X1D cell at grid position <28 0 1>: memory.28.0.1
+      Creating $__XILINX_RAM32X1D cell at grid position <28 0 2>: memory.28.0.2
+      Creating $__XILINX_RAM32X1D cell at grid position <29 0 0>: memory.29.0.0
+      Creating $__XILINX_RAM32X1D cell at grid position <29 0 1>: memory.29.0.1
+      Creating $__XILINX_RAM32X1D cell at grid position <29 0 2>: memory.29.0.2
+      Creating $__XILINX_RAM32X1D cell at grid position <30 0 0>: memory.30.0.0
+      Creating $__XILINX_RAM32X1D cell at grid position <30 0 1>: memory.30.0.1
+      Creating $__XILINX_RAM32X1D cell at grid position <30 0 2>: memory.30.0.2
+      Creating $__XILINX_RAM32X1D cell at grid position <31 0 0>: memory.31.0.0
+      Creating $__XILINX_RAM32X1D cell at grid position <31 0 1>: memory.31.0.1
+      Creating $__XILINX_RAM32X1D cell at grid position <31 0 2>: memory.31.0.2
+
+4.9. Executing TECHMAP pass (map to technology primitives).
+
+4.9.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/xilinx/drams_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/xilinx/drams_map.v' to AST representation.
+Generating RTLIL representation for module `\$__XILINX_RAM32X1D'.
+Generating RTLIL representation for module `\$__XILINX_RAM64X1D'.
+Generating RTLIL representation for module `\$__XILINX_RAM128X1D'.
+Successfully finished Verilog frontend.
+
+4.9.2. Continuing TECHMAP pass.
+Using template $paramod\$__XILINX_RAM32X1D\INIT=0\CLKPOL2=1 for cells of type $__XILINX_RAM32X1D.
+No more expansions possible.
+<suppressed ~107 debug messages>
+
+4.10. Executing PMUX2SHIFTX pass.
+Inspecting $pmux cell alu32/$procmux$317.
+  data width: 32 (next power-of-2 = 32, log2 = 5)
+  checking ctrl signal \op
+    best permutation: \op
+    best xor mask: 6'000000
+      0: 6'001010 -> 6'001010 -> 6'001010: $sshr$alu32.v:24$137_Y
+      1: 6'001001 -> 6'001001 -> 6'001001: $shr$alu32.v:23$136_Y
+      2: 6'001000 -> 6'001000 -> 6'001000: $shl$alu32.v:22$135_Y
+      4: 6'000101 -> 6'000101 -> 6'000101: $xor$alu32.v:19$130_Y
+      5: 6'000100 -> 6'000100 -> 6'000100: $or$alu32.v:18$129_Y
+      6: 6'000011 -> 6'000011 -> 6'000011: $and$alu32.v:17$128_Y
+      7: 6'000010 -> 6'000010 -> 6'000010: $add$alu32.v:16$127_Y
+      8: 6'000001 -> 6'000001 -> 6'000001: $add$alu32.v:15$124_Y
+      9: 6'000000 -> 6'000000 -> 6'000000: 0
+    choices: 9
+    min choice: 0
+    max choice: 10
+    range density: 81%
+    absolute density: 81%
+    full case: false
+    created $shiftx cell $auto$pmux2shiftx.cc:720:execute$620.
+Inspecting $pmux cell cpu/$procmux$330.
+  data width: 32 (next power-of-2 = 32, log2 = 5)
+  checking ctrl signal \idata [14:12]
+    best permutation: \idata [14:12]
+    best xor mask: 3'000
+      0: 3'101 -> 3'101 -> 3'101: { 16'0000000000000000 \buff_in [15:0] }
+      1: 3'100 -> 3'100 -> 3'100: { 24'000000000000000000000000 \buff_in [7:0] }
+      2: 3'010 -> 3'010 -> 3'010: \buff_in
+      3: 3'001 -> 3'001 -> 3'001: { \buff_in [15] \buff_in [15] \buff_in [15] \buff_in [15] \buff_in [15] \buff_in [15] \buff_in [15] \buff_in [15] \buff_in [15] \buff_in [15] \buff_in [15] \buff_in [15] \buff_in [15] \buff_in [15] \buff_in [15] \buff_in [15] \buff_in [15:0] }
+      4: 3'000 -> 3'000 -> 3'000: { \buff_in [7] \buff_in [7] \buff_in [7] \buff_in [7] \buff_in [7] \buff_in [7] \buff_in [7] \buff_in [7] \buff_in [7] \buff_in [7] \buff_in [7] \buff_in [7] \buff_in [7] \buff_in [7] \buff_in [7] \buff_in [7] \buff_in [7] \buff_in [7] \buff_in [7] \buff_in [7] \buff_in [7] \buff_in [7] \buff_in [7] \buff_in [7] \buff_in [7:0] }
+    choices: 5
+    min choice: 0
+    max choice: 5
+    range density: 83%
+    absolute density: 83%
+    full density: 62%
+    update to full case.
+    new min choice: 0
+    new max choice: 7
+    full case: true
+    created $shiftx cell $auto$pmux2shiftx.cc:720:execute$622.
+Inspecting $pmux cell cpu/$procmux$336.
+  data width: 4 (next power-of-2 = 4, log2 = 2)
+  checking ctrl signal \idata [14:12]
+    best permutation: \idata [14:12]
+    best xor mask: 3'000
+      2: 3'001 -> 3'001 -> 3'001: 4'1000
+      3: 3'011 -> 3'011 -> 3'011: 4'0111
+      4: 3'010 -> 3'010 -> 3'010: 4'0110
+      5: 3'100 -> 3'100 -> 3'100: 4'0101
+      6: 3'110 -> 3'110 -> 3'110: 4'0100
+      7: 3'111 -> 3'111 -> 3'111: 4'0011
+    choices: 6
+    min choice: 1
+    max choice: 7
+    range density: 85%
+    absolute density: 75%
+    full case: false
+    created $shiftx cell $auto$pmux2shiftx.cc:720:execute$626.
+Inspecting $pmux cell cpu/$procmux$349.
+  data width: 4 (next power-of-2 = 4, log2 = 2)
+  checking ctrl signal \idata [6:0]
+    best permutation: { \idata [1:0] \idata [6:2] }
+    best xor mask: 7'1100000
+      0: 7'0100011 -> 7'1101000 -> 7'0001000: 4'1001
+      1: 7'0000011 -> 7'1100000 -> 7'0000000: 4'1000
+      2: 7'1100111 -> 7'1111001 -> 7'0011001: 4'0111
+      3: 7'1101111 -> 7'1111011 -> 7'0011011: 4'0110
+      4: 7'0010111 -> 7'1100101 -> 7'0000101: 4'0101
+      5: 7'0110111 -> 7'1101101 -> 7'0001101: 4'0100
+      6: 7'1100011 -> 7'1111000 -> 7'0011000: 4'0011
+      7: 7'0010011 -> 7'1100100 -> 7'0000100: 4'0010
+      8: 7'0110011 -> 7'1101100 -> 7'0001100: 4'0001
+    choices: 9
+    min choice: 0
+    max choice: 27
+    range density: 32%
+    absolute density: 32%
+    full density: 7%
+    full case: false
+    insufficient density.
+
+4.11. Executing OPT pass (performing simple optimizations).
+
+4.11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module alu32.
+<suppressed ~2 debug messages>
+Optimizing module cpu.
+<suppressed ~4 debug messages>
+Optimizing module regfile.
+<suppressed ~1 debug messages>
+
+4.11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\alu32'.
+Finding identical cells in module `\cpu'.
+Finding identical cells in module `\regfile'.
+Removed a total of 0 cells.
+
+4.11.3. Executing OPT_RMDFF pass (remove dff with constant values).
+
+4.11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \alu32..
+Finding unused cells or wires in module \cpu..
+Finding unused cells or wires in module \regfile..
+Removed 11 unused cells and 686 unused wires.
+<suppressed ~14 debug messages>
+
+4.11.5. Finished fast OPT passes.
+
+4.12. Executing MEMORY_MAP pass (converting $mem cells to logic and flip-flops).
+
+4.13. Executing DFFSR2DFF pass (mapping DFFSR cells to simpler FFs).
+
+4.14. Executing DFF2DFFE pass (transform $dff to $dffe where applicable).
+Transforming FF to FF+Enable cells in module alu32:
+Transforming FF to FF+Enable cells in module cpu:
+Transforming FF to FF+Enable cells in module regfile:
+
+4.15. Executing OPT pass (performing simple optimizations).
+
+4.15.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module alu32.
+Optimizing module cpu.
+Optimizing module regfile.
+
+4.15.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\alu32'.
+Finding identical cells in module `\cpu'.
+Finding identical cells in module `\regfile'.
+Removed a total of 0 cells.
+
+4.15.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \alu32..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \cpu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \regfile..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+<suppressed ~13 debug messages>
+
+4.15.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \alu32.
+  Optimizing cells in module \cpu.
+    Consolidated identical input bits for $mux cell $ternary$cpu.v:121$24:
+      Old ports: A=4, B={ \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [7] \idata [30:25] \idata [11:8] 1'0 }, Y=$ternary$cpu.v:121$24_Y
+      New ports: A=12'000000000010, B={ \idata [31] \idata [7] \idata [30:25] \idata [11:8] }, Y=$ternary$cpu.v:121$24_Y [12:1]
+      New connections: { $ternary$cpu.v:121$24_Y [31:13] $ternary$cpu.v:121$24_Y [0] } = { $ternary$cpu.v:121$24_Y [12] $ternary$cpu.v:121$24_Y [12] $ternary$cpu.v:121$24_Y [12] $ternary$cpu.v:121$24_Y [12] $ternary$cpu.v:121$24_Y [12] $ternary$cpu.v:121$24_Y [12] $ternary$cpu.v:121$24_Y [12] $ternary$cpu.v:121$24_Y [12] $ternary$cpu.v:121$24_Y [12] $ternary$cpu.v:121$24_Y [12] $ternary$cpu.v:121$24_Y [12] $ternary$cpu.v:121$24_Y [12] $ternary$cpu.v:121$24_Y [12] $ternary$cpu.v:121$24_Y [12] $ternary$cpu.v:121$24_Y [12] $ternary$cpu.v:121$24_Y [12] $ternary$cpu.v:121$24_Y [12] $ternary$cpu.v:121$24_Y [12] $ternary$cpu.v:121$24_Y [12] 1'0 }
+    Consolidated identical input bits for $mux cell $ternary$cpu.v:135$42:
+      Old ports: A=\idata [31:20], B={ 7'0000000 \idata [24:20] }, Y=\alu_imm
+      New ports: A=\idata [31:25], B=7'0000000, Y=\alu_imm [11:5]
+      New connections: \alu_imm [4:0] = \idata [24:20]
+    Consolidated identical input bits for $mux cell $ternary$cpu.v:170$60:
+      Old ports: A={ 24'000000000000000000000000 $auto$wreduce.cc:455:run$371 [7:0] }, B={ 16'0000000000000000 \drdata [31:16] }, Y=$ternary$cpu.v:170$60_Y
+      New ports: A={ 8'00000000 $auto$wreduce.cc:455:run$371 [7:0] }, B=\drdata [31:16], Y=$ternary$cpu.v:170$60_Y [15:0]
+      New connections: $ternary$cpu.v:170$60_Y [31:16] = 16'0000000000000000
+    Consolidated identical input bits for $mux cell $ternary$cpu.v:187$72:
+      Old ports: A=0, B={ \buff_out [7:0] 24'000000000000000000000000 }, Y=$ternary$cpu.v:187$72_Y
+      New ports: A=8'00000000, B=\buff_out [7:0], Y=$ternary$cpu.v:187$72_Y [31:24]
+      New connections: $ternary$cpu.v:187$72_Y [23:0] = 24'000000000000000000000000
+    Consolidated identical input bits for $mux cell $ternary$cpu.v:192$94:
+      Old ports: A=4'0000, B=4'1111, Y=$ternary$cpu.v:192$94_Y
+      New ports: A=1'0, B=1'1, Y=$ternary$cpu.v:192$94_Y [0]
+      New connections: $ternary$cpu.v:192$94_Y [3:1] = { $ternary$cpu.v:192$94_Y [0] $ternary$cpu.v:192$94_Y [0] $ternary$cpu.v:192$94_Y [0] }
+  Optimizing cells in module \cpu.
+    Consolidated identical input bits for $mux cell $ternary$cpu.v:121$25:
+      Old ports: A=$ternary$cpu.v:121$24_Y, B={ \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [7] \idata [30:25] \idata [11:8] 1'0 }, Y=$ternary$cpu.v:121$25_Y
+      New ports: A=$ternary$cpu.v:121$24_Y [12:1], B={ \idata [31] \idata [7] \idata [30:25] \idata [11:8] }, Y=$ternary$cpu.v:121$25_Y [12:1]
+      New connections: { $ternary$cpu.v:121$25_Y [31:13] $ternary$cpu.v:121$25_Y [0] } = { $ternary$cpu.v:121$25_Y [12] $ternary$cpu.v:121$25_Y [12] $ternary$cpu.v:121$25_Y [12] $ternary$cpu.v:121$25_Y [12] $ternary$cpu.v:121$25_Y [12] $ternary$cpu.v:121$25_Y [12] $ternary$cpu.v:121$25_Y [12] $ternary$cpu.v:121$25_Y [12] $ternary$cpu.v:121$25_Y [12] $ternary$cpu.v:121$25_Y [12] $ternary$cpu.v:121$25_Y [12] $ternary$cpu.v:121$25_Y [12] $ternary$cpu.v:121$25_Y [12] $ternary$cpu.v:121$25_Y [12] $ternary$cpu.v:121$25_Y [12] $ternary$cpu.v:121$25_Y [12] $ternary$cpu.v:121$25_Y [12] $ternary$cpu.v:121$25_Y [12] $ternary$cpu.v:121$25_Y [12] 1'0 }
+    Consolidated identical input bits for $mux cell $ternary$cpu.v:170$61:
+      Old ports: A=$ternary$cpu.v:170$60_Y, B={ 8'00000000 \drdata [31:8] }, Y=$ternary$cpu.v:170$61_Y
+      New ports: A={ 8'00000000 $ternary$cpu.v:170$60_Y [15:0] }, B=\drdata [31:8], Y=$ternary$cpu.v:170$61_Y [23:0]
+      New connections: $ternary$cpu.v:170$61_Y [31:24] = 8'00000000
+    Consolidated identical input bits for $mux cell $ternary$cpu.v:187$73:
+      Old ports: A=$ternary$cpu.v:187$72_Y, B={ \buff_out [15:0] 16'0000000000000000 }, Y=$ternary$cpu.v:187$73_Y
+      New ports: A={ $ternary$cpu.v:187$72_Y [31:24] 8'00000000 }, B=\buff_out [15:0], Y=$ternary$cpu.v:187$73_Y [31:16]
+      New connections: $ternary$cpu.v:187$73_Y [15:0] = 16'0000000000000000
+    Consolidated identical input bits for $mux cell $ternary$cpu.v:192$95:
+      Old ports: A=$ternary$cpu.v:192$94_Y, B={ \daddr [1] \daddr [1] $logic_not$cpu.v:190$80_Y $logic_not$cpu.v:190$80_Y }, Y=$auto$wreduce.cc:455:run$372 [3:0]
+      New ports: A={ $ternary$cpu.v:192$94_Y [0] $ternary$cpu.v:192$94_Y [0] }, B={ \daddr [1] $logic_not$cpu.v:190$80_Y }, Y={ $auto$wreduce.cc:455:run$372 [2] $auto$wreduce.cc:455:run$372 [0] }
+      New connections: { $auto$wreduce.cc:455:run$372 [3] $auto$wreduce.cc:455:run$372 [1] } = { $auto$wreduce.cc:455:run$372 [2] $auto$wreduce.cc:455:run$372 [0] }
+  Optimizing cells in module \cpu.
+    Consolidated identical input bits for $mux cell $ternary$cpu.v:121$26:
+      Old ports: A=$ternary$cpu.v:121$25_Y, B={ \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [7] \idata [30:25] \idata [11:8] 1'0 }, Y=$ternary$cpu.v:121$26_Y
+      New ports: A=$ternary$cpu.v:121$25_Y [12:1], B={ \idata [31] \idata [7] \idata [30:25] \idata [11:8] }, Y=$ternary$cpu.v:121$26_Y [12:1]
+      New connections: { $ternary$cpu.v:121$26_Y [31:13] $ternary$cpu.v:121$26_Y [0] } = { $ternary$cpu.v:121$26_Y [12] $ternary$cpu.v:121$26_Y [12] $ternary$cpu.v:121$26_Y [12] $ternary$cpu.v:121$26_Y [12] $ternary$cpu.v:121$26_Y [12] $ternary$cpu.v:121$26_Y [12] $ternary$cpu.v:121$26_Y [12] $ternary$cpu.v:121$26_Y [12] $ternary$cpu.v:121$26_Y [12] $ternary$cpu.v:121$26_Y [12] $ternary$cpu.v:121$26_Y [12] $ternary$cpu.v:121$26_Y [12] $ternary$cpu.v:121$26_Y [12] $ternary$cpu.v:121$26_Y [12] $ternary$cpu.v:121$26_Y [12] $ternary$cpu.v:121$26_Y [12] $ternary$cpu.v:121$26_Y [12] $ternary$cpu.v:121$26_Y [12] $ternary$cpu.v:121$26_Y [12] 1'0 }
+    Consolidated identical input bits for $mux cell $ternary$cpu.v:187$74:
+      Old ports: A=$ternary$cpu.v:187$73_Y, B={ \buff_out [23:0] 8'00000000 }, Y=$ternary$cpu.v:187$74_Y
+      New ports: A={ $ternary$cpu.v:187$73_Y [31:16] 8'00000000 }, B=\buff_out [23:0], Y=$ternary$cpu.v:187$74_Y [31:8]
+      New connections: $ternary$cpu.v:187$74_Y [7:0] = 8'00000000
+  Optimizing cells in module \cpu.
+    Consolidated identical input bits for $mux cell $ternary$cpu.v:121$27:
+      Old ports: A=$ternary$cpu.v:121$26_Y, B={ \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [7] \idata [30:25] \idata [11:8] 1'0 }, Y=$ternary$cpu.v:121$27_Y
+      New ports: A=$ternary$cpu.v:121$26_Y [12:1], B={ \idata [31] \idata [7] \idata [30:25] \idata [11:8] }, Y=$ternary$cpu.v:121$27_Y [12:1]
+      New connections: { $ternary$cpu.v:121$27_Y [31:13] $ternary$cpu.v:121$27_Y [0] } = { $ternary$cpu.v:121$27_Y [12] $ternary$cpu.v:121$27_Y [12] $ternary$cpu.v:121$27_Y [12] $ternary$cpu.v:121$27_Y [12] $ternary$cpu.v:121$27_Y [12] $ternary$cpu.v:121$27_Y [12] $ternary$cpu.v:121$27_Y [12] $ternary$cpu.v:121$27_Y [12] $ternary$cpu.v:121$27_Y [12] $ternary$cpu.v:121$27_Y [12] $ternary$cpu.v:121$27_Y [12] $ternary$cpu.v:121$27_Y [12] $ternary$cpu.v:121$27_Y [12] $ternary$cpu.v:121$27_Y [12] $ternary$cpu.v:121$27_Y [12] $ternary$cpu.v:121$27_Y [12] $ternary$cpu.v:121$27_Y [12] $ternary$cpu.v:121$27_Y [12] $ternary$cpu.v:121$27_Y [12] 1'0 }
+  Optimizing cells in module \cpu.
+    Consolidated identical input bits for $mux cell $ternary$cpu.v:121$28:
+      Old ports: A=$ternary$cpu.v:121$27_Y, B={ \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [7] \idata [30:25] \idata [11:8] 1'0 }, Y=$ternary$cpu.v:121$28_Y
+      New ports: A=$ternary$cpu.v:121$27_Y [12:1], B={ \idata [31] \idata [7] \idata [30:25] \idata [11:8] }, Y=$ternary$cpu.v:121$28_Y [12:1]
+      New connections: { $ternary$cpu.v:121$28_Y [31:13] $ternary$cpu.v:121$28_Y [0] } = { $ternary$cpu.v:121$28_Y [12] $ternary$cpu.v:121$28_Y [12] $ternary$cpu.v:121$28_Y [12] $ternary$cpu.v:121$28_Y [12] $ternary$cpu.v:121$28_Y [12] $ternary$cpu.v:121$28_Y [12] $ternary$cpu.v:121$28_Y [12] $ternary$cpu.v:121$28_Y [12] $ternary$cpu.v:121$28_Y [12] $ternary$cpu.v:121$28_Y [12] $ternary$cpu.v:121$28_Y [12] $ternary$cpu.v:121$28_Y [12] $ternary$cpu.v:121$28_Y [12] $ternary$cpu.v:121$28_Y [12] $ternary$cpu.v:121$28_Y [12] $ternary$cpu.v:121$28_Y [12] $ternary$cpu.v:121$28_Y [12] $ternary$cpu.v:121$28_Y [12] $ternary$cpu.v:121$28_Y [12] 1'0 }
+  Optimizing cells in module \cpu.
+    Consolidated identical input bits for $mux cell $ternary$cpu.v:121$29:
+      Old ports: A=$ternary$cpu.v:121$28_Y, B={ \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [31] \idata [7] \idata [30:25] \idata [11:8] 1'0 }, Y=\b_offset
+      New ports: A=$ternary$cpu.v:121$28_Y [12:1], B={ \idata [31] \idata [7] \idata [30:25] \idata [11:8] }, Y=\b_offset [12:1]
+      New connections: { \b_offset [31:13] \b_offset [0] } = { \b_offset [12] \b_offset [12] \b_offset [12] \b_offset [12] \b_offset [12] \b_offset [12] \b_offset [12] \b_offset [12] \b_offset [12] \b_offset [12] \b_offset [12] \b_offset [12] \b_offset [12] \b_offset [12] \b_offset [12] \b_offset [12] \b_offset [12] \b_offset [12] \b_offset [12] 1'0 }
+  Optimizing cells in module \cpu.
+  Optimizing cells in module \regfile.
+Performed a total of 14 changes.
+
+4.15.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\alu32'.
+Finding identical cells in module `\cpu'.
+Finding identical cells in module `\regfile'.
+Removed a total of 0 cells.
+
+4.15.6. Executing OPT_RMDFF pass (remove dff with constant values).
+
+4.15.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \alu32..
+Finding unused cells or wires in module \cpu..
+Finding unused cells or wires in module \regfile..
+
+4.15.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module alu32.
+Optimizing module cpu.
+<suppressed ~1 debug messages>
+Optimizing module regfile.
+
+4.15.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.15.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \alu32..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \cpu..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \regfile..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+<suppressed ~13 debug messages>
+
+4.15.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \alu32.
+  Optimizing cells in module \cpu.
+  Optimizing cells in module \regfile.
+Performed a total of 0 changes.
+
+4.15.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\alu32'.
+Finding identical cells in module `\cpu'.
+Finding identical cells in module `\regfile'.
+Removed a total of 0 cells.
+
+4.15.13. Executing OPT_RMDFF pass (remove dff with constant values).
+
+4.15.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \alu32..
+Finding unused cells or wires in module \cpu..
+Finding unused cells or wires in module \regfile..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+4.15.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module alu32.
+Optimizing module cpu.
+Optimizing module regfile.
+
+4.15.16. Finished OPT passes. (There is nothing left to do.)
+
+4.16. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+Mapping cpu.$procdff$365 ($dff).
+
+4.17. Executing SHREGMAP pass (map shift registers).
+Converted 0 dff cells into 0 shift registers.
+
+4.18. Executing TECHMAP pass (map to technology primitives).
+
+4.18.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+4.18.2. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/xilinx/arith_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/xilinx/arith_map.v' to AST representation.
+Generating RTLIL representation for module `\_80_xilinx_lcu'.
+Generating RTLIL representation for module `\_80_xilinx_alu'.
+Successfully finished Verilog frontend.
+
+4.18.3. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $eqx.
+Using extmapper simplemap for cells of type $nex.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $not.
+Using template $paramod$bf3b5fab9e093d19bbea16c6516a73d098dbaa75\_80_xilinx_alu for cells of type $alu.
+Using template $paramod$constmap:231af4839dc2cdd12d5fb6e7f30f9d852a260a6e$paramod$0abe75bf1371b57bef758f60e5922232bac805f8\_90_shift_shiftx for cells of type $shiftx.
+Using template $paramod$2827e7d34c07400d403bef957360fef4bde6a36b\_80_xilinx_alu for cells of type $alu.
+Using template $paramod$constmap:11383818d8458450480c0de00f6727f37f62e3e8$paramod$e82f95b66701918fca10f3cd05193671f64c61b0\_90_shift_shiftx for cells of type $shiftx.
+Using extmapper simplemap for cells of type $reduce_or.
+Using template $paramod\_90_pmux\WIDTH=4\S_WIDTH=4 for cells of type $pmux.
+Using template $paramod$ed0e7b60ee0d374b6722444b11ce7533faf826e2\_80_xilinx_alu for cells of type $alu.
+Using template $paramod\_90_pmux\WIDTH=4\S_WIDTH=9 for cells of type $pmux.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod$constmap:b9a86d073741c2a0f7bb241e73c2dd11747f3288$paramod$8c0dd5ff1d42c73e7701ae7a633831fc809160d1\_90_shift_ops_shr_shl_sshl_sshr for cells of type $shl.
+Using template $paramod$constmap:b9a86d073741c2a0f7bb241e73c2dd11747f3288$paramod$5be353ef5531baf885e010532ba16fbb2d5d1d8e\_90_shift_ops_shr_shl_sshl_sshr for cells of type $shr.
+Using template $paramod$constmap:b9a86d073741c2a0f7bb241e73c2dd11747f3288$paramod$9344b82b4a7addbb63333c0acbcf5c1c765ca74e\_90_shift_ops_shr_shl_sshl_sshr for cells of type $sshr.
+Using template $paramod$constmap:b16e77d538785b1642b3b6f83fc9b09d8f7da4ed$paramod$b2530afe6a3388b0baa3399dbc657b6f82f5a45e\_90_shift_shiftx for cells of type $shiftx.
+Using template $paramod$constmap:865108d2bdd744c24b46c7a5133c401e10c3bc30$paramod$729f90ce8521666fc11b6cecfce5b88de3e934ae\_90_shift_shiftx for cells of type $shift.
+Using template $paramod\_90_pmux\WIDTH=32\S_WIDTH=2 for cells of type $pmux.
+No more expansions possible.
+<suppressed ~2607 debug messages>
+
+4.19. Executing OPT pass (performing simple optimizations).
+
+4.19.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module alu32.
+<suppressed ~332 debug messages>
+Optimizing module cpu.
+<suppressed ~999 debug messages>
+Optimizing module regfile.
+<suppressed ~5 debug messages>
+
+4.19.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\alu32'.
+<suppressed ~2070 debug messages>
+Finding identical cells in module `\cpu'.
+<suppressed ~2250 debug messages>
+Finding identical cells in module `\regfile'.
+Removed a total of 1440 cells.
+
+4.19.3. Executing OPT_RMDFF pass (remove dff with constant values).
+
+4.19.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \alu32..
+Finding unused cells or wires in module \cpu..
+Finding unused cells or wires in module \regfile..
+Removed 1239 unused cells and 520 unused wires.
+<suppressed ~1242 debug messages>
+
+4.19.5. Finished fast OPT passes.
+
+4.20. Executing TECHMAP pass (map to technology primitives).
+
+4.20.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+4.20.2. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/xilinx/cells_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/xilinx/cells_map.v' to AST representation.
+Generating RTLIL representation for module `\_90_dff_nn0_to_np0'.
+Generating RTLIL representation for module `\_90_dff_pn0_to_pp0'.
+Generating RTLIL representation for module `\_90_dff_nn1_to_np1'.
+Generating RTLIL representation for module `\_90_dff_pn1_to_pp1'.
+Generating RTLIL representation for module `\$__SHREG_'.
+Generating RTLIL representation for module `\$__XILINX_SHREG_'.
+Successfully finished Verilog frontend.
+
+4.20.3. Continuing TECHMAP pass.
+No more expansions possible.
+
+4.21. Executing ABC pass (technology mapping using ABC).
+
+4.21.1. Extracting gate netlist of module `\alu32' to `<abc-temp-dir>/input.blif'..
+Extracted 1366 gates and 1504 wires to a netlist network with 135 inputs and 159 outputs.
+
+4.21.1.1. Executing ABC.
+Running ABC command: berkeley-abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lut <abc-temp-dir>/lutdefs.txt 
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + retime 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + if 
+ABC: + mfs2 
+ABC: Currently "mfs" cannot process the network containing nodes with more than 6 fanins.
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+4.21.1.2. Re-integrating ABC results.
+ABC RESULTS:              $lut cells:     1078
+ABC RESULTS:        internal signals:     1210
+ABC RESULTS:           input signals:      135
+ABC RESULTS:          output signals:      159
+Removing temp directory.
+
+4.21.2. Extracting gate netlist of module `\cpu' to `<abc-temp-dir>/input.blif'..
+Extracted 1257 gates and 1646 wires to a netlist network with 386 inputs and 429 outputs.
+
+4.21.2.1. Executing ABC.
+Running ABC command: berkeley-abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lut <abc-temp-dir>/lutdefs.txt 
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + retime 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + if 
+ABC: + mfs2 
+ABC: Currently "mfs" cannot process the network containing nodes with more than 6 fanins.
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+4.21.2.2. Re-integrating ABC results.
+ABC RESULTS:              $lut cells:     1190
+ABC RESULTS:        internal signals:      831
+ABC RESULTS:           input signals:      386
+ABC RESULTS:          output signals:      429
+Removing temp directory.
+
+4.21.3. Extracting gate netlist of module `\regfile' to `<abc-temp-dir>/input.blif'..
+Extracted 5 gates and 11 wires to a netlist network with 6 inputs and 1 outputs.
+
+4.21.3.1. Executing ABC.
+Running ABC command: berkeley-abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lut <abc-temp-dir>/lutdefs.txt 
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + retime 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + if 
+ABC: + mfs2 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+4.21.3.2. Re-integrating ABC results.
+ABC RESULTS:              $lut cells:        2
+ABC RESULTS:        internal signals:        4
+ABC RESULTS:           input signals:        6
+ABC RESULTS:          output signals:        1
+Removing temp directory.
+Removed 0 unused cells and 762 unused wires.
+
+4.22. Executing SHREGMAP pass (map shift registers).
+Converted 0 dff cells into 0 shift registers.
+
+4.23. Executing TECHMAP pass (map to technology primitives).
+
+4.23.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/xilinx/lut_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/xilinx/lut_map.v' to AST representation.
+Generating RTLIL representation for module `\$lut'.
+Successfully finished Verilog frontend.
+
+4.23.2. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/xilinx/ff_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/xilinx/ff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFF_NN0_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_PN0_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_NN1_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_PN1_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Successfully finished Verilog frontend.
+
+4.23.3. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/xilinx/cells_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/xilinx/cells_map.v' to AST representation.
+Generating RTLIL representation for module `\_90_dff_nn0_to_np0'.
+Generating RTLIL representation for module `\_90_dff_pn0_to_pp0'.
+Generating RTLIL representation for module `\_90_dff_nn1_to_np1'.
+Generating RTLIL representation for module `\_90_dff_pn1_to_pp1'.
+Generating RTLIL representation for module `\$__SHREG_'.
+Generating RTLIL representation for module `\$__XILINX_SHREG_'.
+Successfully finished Verilog frontend.
+
+4.23.4. Continuing TECHMAP pass.
+Using template $paramod$f6911cf108a4df89c75c9b82ae7f908be1d48942\$lut for cells of type $lut.
+Using template $paramod$57619346c001bba14f685682aaa48a843cd5a7a5\$lut for cells of type $lut.
+Using template $paramod$c2f3d9a182410b70ce135c02c8e3994b25f5471d\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0000000000001011 for cells of type $lut.
+Using template \$_DFF_P_ for cells of type $_DFF_P_.
+Using template $paramod$1b3a424ee2420dea1e49e22858b390cb487e13c6\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=2\LUT=4'0001 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=2\LUT=4'1001 for cells of type $lut.
+Using template $paramod$2372381f45d474b3eb5c787077cd8c0e73353efe\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=2\LUT=4'0100 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'11001010 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0100010011110000 for cells of type $lut.
+Using template $paramod$7a737e5d3e2e23a6a857fbe096678436e50b1f8d\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'11100000 for cells of type $lut.
+Using template $paramod$95c6a64df76131b90399696387f6e4430aa0bf89\$lut for cells of type $lut.
+Using template $paramod$3da916e1c5705810970d14a41b8c266d3136a8ba\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=5\LUT=201654272 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'00000001 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=5\LUT=32'11111111001100110000111101010101 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'00011100 for cells of type $lut.
+Using template $paramod$ceedd87303340237c92640d2bde868287976ef59\$lut for cells of type $lut.
+Using template $paramod$91cef043d216eb408a0dc22dbf0385e485341088\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'11110100 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'00010000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'01000000 for cells of type $lut.
+Using template $paramod$42824a7114c432cb12fd6c22050f445ca9c548d5\$lut for cells of type $lut.
+Using template $paramod$88049d66a6cb7d854d9a7e041af6bd64292fe053\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=5\LUT=32'11110000100010000000000000000000 for cells of type $lut.
+Using template $paramod$3cb401667e450ec58ea9ecabb0caa1a709501d05\$lut for cells of type $lut.
+Using template $paramod$fd88bb8a868cd703eddc07ab18161df293935ca7\$lut for cells of type $lut.
+Using template $paramod$452c980f22b40298021fea74988b63feb1aa9944\$lut for cells of type $lut.
+Using template $paramod$a25e13fcde56d444cb4485e9a2ae6da1bb16aae2\$lut for cells of type $lut.
+Using template $paramod$c2656d1f36774078f0d5d7a877b6450ac194c502\$lut for cells of type $lut.
+Using template $paramod$bc3321fa4b317c69d7a87d5efb7f054d865d99ba\$lut for cells of type $lut.
+Using template $paramod$e4410f6068ac195e7117d07a11f0b8cdeea2c9e5\$lut for cells of type $lut.
+Using template $paramod$edb7507ca595913203ac4f366669362ea0dce278\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'01001111 for cells of type $lut.
+Using template $paramod$56f3e246421b6b29fd066d86d01fc72a1f44c94f\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=5\LUT=32'10001000111110001111111111111111 for cells of type $lut.
+Using template $paramod$28e57d23d4dc7f6c11f23f062c76d1df1f23116a\$lut for cells of type $lut.
+Using template $paramod$9b260d495bf77e1d2bddab804fffe472b4d681d6\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1011000011111111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=5\LUT=32'11111111000000000000110011011111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=5\LUT=32'11111100000000001100110011101100 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'00111010 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=2\LUT=4'1000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=2\LUT=4'0110 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'00110101 for cells of type $lut.
+Using template $paramod$33a8b4c8a84ca536dbdd4fea6c96842757b1a355\$lut for cells of type $lut.
+Using template $paramod$fd981d57d953ba8dcac298d3386c951aac959b56\$lut for cells of type $lut.
+Using template $paramod$699a7175b971b3f991b323612a3eff6d709ab58d\$lut for cells of type $lut.
+Using template $paramod$17f707eb3f5199a3681cb8c9f0f5bf725729549b\$lut for cells of type $lut.
+Using template $paramod$8caf5682738b262198f5fd99db622b108bd19e8c\$lut for cells of type $lut.
+Using template $paramod$8727d0bfc0298d7ab150e6a74314ecd00b154f30\$lut for cells of type $lut.
+Using template $paramod$c966576b6cf9798fc2047ed8cc42921226a651e3\$lut for cells of type $lut.
+Using template $paramod$295c9294db32ab165ef852fae331375fa18e0e84\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=1\LUT=2'01 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0000000000000001 for cells of type $lut.
+Using template $paramod$ccce4f3946ebc1c1bbc18bd1adc9add9d368a18e\$lut for cells of type $lut.
+Using template $paramod$53afc4693cdd4770ebaebeb0ab6c288fde062f75\$lut for cells of type $lut.
+Using template $paramod$3554ef28dcb786bfa5815e2cb19005ba8b1e5da2\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0000000010111111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0000010100000011 for cells of type $lut.
+Using template $paramod$7004ef649e73e113b8851814c1542b8fe4722838\$lut for cells of type $lut.
+Using template $paramod$cee1e9bc56c4d182e88f2f891d9a34d7f852abb5\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=5\LUT=15794176 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'10101100 for cells of type $lut.
+Using template $paramod$cf9619db46254d12ee332731e37a149ae6754ca7\$lut for cells of type $lut.
+Using template $paramod$19a28fd5b42d06a33a41c8eb111b10454b8017f3\$lut for cells of type $lut.
+Using template $paramod$228cbc7fca0c562214a209b6ee1bae3447419eed\$lut for cells of type $lut.
+Using template $paramod$898d305f992f90ac38bbd5027d015ccda4d12d61\$lut for cells of type $lut.
+Using template $paramod$498d69d4913c81fcd5760f93d66e25c6bfd198a2\$lut for cells of type $lut.
+Using template $paramod$0735a2df95ee53153b54665992c8146071ca0ea6\$lut for cells of type $lut.
+Using template $paramod$8a8ff953f6129e122047d149f8c084d3c0ee8047\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'00001110 for cells of type $lut.
+Using template $paramod$01e48a99de9f1eb004005419da4d6322af31b569\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=5\LUT=167968768 for cells of type $lut.
+Using template $paramod$6a96bd89fe735bae61e67eda854d0da0de9d26c9\$lut for cells of type $lut.
+Using template $paramod$62d51c843758a87abe5a7e19ee68c61fe3927ae2\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1000000000000000 for cells of type $lut.
+Using template $paramod$e6d142e476f449a5458275c4b0f36689310d46ec\$lut for cells of type $lut.
+Using template $paramod$c78ead43809d487744c44f260bb6a5fe5cace53e\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=5\LUT=1325400064 for cells of type $lut.
+Using template $paramod$d748f9852b6dcbf019bd4a7773edea15ceb59d48\$lut for cells of type $lut.
+Using template $paramod$3126902c87dd3f05eafeea593490bd792bae0033\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0000001100000101 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=5\LUT=32'10000000000000000000000000000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0001000000000000 for cells of type $lut.
+Using template $paramod$2b8d3ed3a226b72de1743ee7da856fa004b637b5\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0000011101110111 for cells of type $lut.
+Using template $paramod$6358756ffcb5249dbef14512c5cf2657b3def577\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=5\LUT=118226944 for cells of type $lut.
+Using template $paramod$01009c0c42a6422b416bdd895250906c04389848\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1111010000000000 for cells of type $lut.
+Using template $paramod$e5401925f05569a2033adfb48d64ba7b2a02bae8\$lut for cells of type $lut.
+Using template $paramod$d67b5e9fb82cbbb1a4aa620749dda761e021a33b\$lut for cells of type $lut.
+Using template $paramod$9eb1157df74496269bb59eb04d62cfd04879cb5c\$lut for cells of type $lut.
+Using template $paramod$c5a1c6586c1e5a774b1ec9d12b4c1f3a81676a25\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=5\LUT=32'11101111000011110000000000000000 for cells of type $lut.
+Using template $paramod$43375d446ebe6e4880dd8b55fed1c334ed8faaca\$lut for cells of type $lut.
+Using template $paramod$d65b03dabf752ad57a6ead6d28065ded22fd6fcc\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0000111100010001 for cells of type $lut.
+Using template $paramod$87a5736f6c526ce194a7f0fa47156dee829fccb6\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0100111100000000 for cells of type $lut.
+Using template $paramod$d58f1121379ae67ed91db834956bd9e88fdb3096\$lut for cells of type $lut.
+Using template $paramod$dc49a1e3d83e20743062862708a62914af81a193\$lut for cells of type $lut.
+Using template $paramod$d332c140cb4923288068d8a82e6bd6c03cf3cbdd\$lut for cells of type $lut.
+Using template $paramod$d3854e401fe5b8b146829835823fbfb0b0c02108\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=5\LUT=32'11110000111111100000000000000000 for cells of type $lut.
+Using template $paramod$6e22e588f5b7077e40229676cdf198b4b5e9c07a\$lut for cells of type $lut.
+Using template $paramod$1d1818d1f1b1719676dd231e382e918f6e9a16a2\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1111111000000000 for cells of type $lut.
+Using template $paramod$806c2814a796692619ccd94d9e7bb81a0c0fd009\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1100101000000000 for cells of type $lut.
+Using template $paramod$5714a80fd1912ba823c23fae2d69562bbe14488d\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=5\LUT=32'11111111110011001111000010101010 for cells of type $lut.
+Using template $paramod$ac7c2da5562bd334ed3964e28896de1ff75a2044\$lut for cells of type $lut.
+Using template $paramod$e05027642c0b57fb241c24b6435682cd75f604ca\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0011010111111111 for cells of type $lut.
+Using template $paramod$0ac339b33ef5b73cca809e4b2b283430747d8357\$lut for cells of type $lut.
+Using template $paramod$e00f586317e02353cb63944ce9f967c8c8835aa7\$lut for cells of type $lut.
+Using template $paramod$899090c36db8c3544aa3d6a5214a1222fca6f1a8\$lut for cells of type $lut.
+Using template $paramod$cd7cb79016614c8a9f04438d23e7a47535314fb1\$lut for cells of type $lut.
+Using template $paramod$aba6acabb0504c2024e40fc64a7dba6fb4df8fe8\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0011010100000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=5\LUT=300941312 for cells of type $lut.
+Using template $paramod$ba479a210228a49f9d0672a2bf39c475116425cf\$lut for cells of type $lut.
+Using template $paramod$358c94916e077866332692e870a74e84aedbdc54\$lut for cells of type $lut.
+Using template $paramod$037365b7604531a9f07cfdfa671a82be43b30bdc\$lut for cells of type $lut.
+Using template $paramod$b1ecd7c25fc3c14997c37eadc125b2d30d85deb9\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'00000111 for cells of type $lut.
+Using template $paramod$9844e880fec2f6adf257b973644c7c725bb4b469\$lut for cells of type $lut.
+Using template $paramod$86e44e2d7720c95e8c237a47d798a5e2cd4870f6\$lut for cells of type $lut.
+Using template $paramod$af1687a2985ae78868081f5d9cdd484ea4125fbe\$lut for cells of type $lut.
+Using template $paramod$6ea80b3c45b99cb658dc4ab8342f39c4a7788ff4\$lut for cells of type $lut.
+Using template $paramod$d329b978b9f4756e31407df723ae57a4f349a825\$lut for cells of type $lut.
+Using template $paramod$1cdb096f58784149d999bad6a085179f96321d13\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0000000000010111 for cells of type $lut.
+Using template $paramod$3bdadfd8071a2972d7397ca9356f6a08fd718236\$lut for cells of type $lut.
+Using template $paramod$5e7b5b3eb52b1ea14fa129f33aff85fb3e6a7c34\$lut for cells of type $lut.
+Using template $paramod$b00cf30cf87a932acfe95cc1ccd0f2ee11429f1c\$lut for cells of type $lut.
+Using template $paramod$a12ecb69eda39aee283a5ce3a145fde07052af6c\$lut for cells of type $lut.
+Using template $paramod$474f54981d8be3ad85b022f66219ea02de62d00c\$lut for cells of type $lut.
+Using template $paramod$835036790a8fba43764a77d7230b523767036f31\$lut for cells of type $lut.
+Using template $paramod$02aaa752a037df7c58229c6a0807482069421906\$lut for cells of type $lut.
+Using template $paramod$d3e30f194467bea864ac0321226624e7a7c6192d\$lut for cells of type $lut.
+Using template $paramod$4e52dcf8f78e83a0db33e17e514d902605e375cd\$lut for cells of type $lut.
+Using template $paramod$2a347ee83cc888c87f82e92188ac7803db72cdf1\$lut for cells of type $lut.
+Using template $paramod$40de9074ab3e1e799b845dabe8f51da894d54973\$lut for cells of type $lut.
+Using template $paramod$04579d5a7f7d11008d5c4dab02ae6edd004a19ac\$lut for cells of type $lut.
+Using template $paramod$5eed94da42822b2bb5be20fe7cc91811e20e4f00\$lut for cells of type $lut.
+Using template $paramod$272796646ad2fc3ac02275c993d7d47c2d94e9b0\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=5\LUT=655363 for cells of type $lut.
+Using template $paramod$6bc625333c93a213f2834a1e95fc6a4f458b010d\$lut for cells of type $lut.
+Using template $paramod$3927bda2f3876c7f91e5725f7fe976b8b4db6c4e\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1110111100000000 for cells of type $lut.
+Using template $paramod$032b3caf7af2ab07c94a23f9bf41b0388ad999fb\$lut for cells of type $lut.
+Using template $paramod$b82fa616224281d57724492305a084a6e19260fa\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=5\LUT=285147136 for cells of type $lut.
+Using template $paramod$38ccd291cd26512ff7111870c9a2c458cf51ca50\$lut for cells of type $lut.
+Using template $paramod$7e522c186e7f385786490ca7e7dde6b086a2eeef\$lut for cells of type $lut.
+Using template $paramod$84ddf6316c157662d7157880f6560e615a291800\$lut for cells of type $lut.
+Using template $paramod$e127a3948dc190fcf8e2a4a6200fc575385a96b6\$lut for cells of type $lut.
+Using template $paramod$db7f90fbb79a337197408a616150afe40a49a553\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=3\LUT=8'11010000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0000000000011111 for cells of type $lut.
+Using template $paramod$6bf57de06f427a94d0538ad770967b52c4e360c3\$lut for cells of type $lut.
+Using template $paramod$5259b5e77b3cc801a4792582939d3bb8b851c57a\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=5\LUT=32'11110001111111110000000000000000 for cells of type $lut.
+Using template $paramod$18fe7b715a2d1e5238c45fe27ae4935943d14d0a\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=5\LUT=32'11111111111111100000000000000000 for cells of type $lut.
+Using template $paramod$ce35d2ce4f243014398093218abef63eb0a5fdda\$lut for cells of type $lut.
+Using template $paramod$bd410629760dd3815745d7975fe5de492b033169\$lut for cells of type $lut.
+Using template $paramod$99bceeae242d00d5e78077997b3adc2ac4a8aff5\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=5\LUT=32'11111111110000111111111101010101 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=5\LUT=786437 for cells of type $lut.
+Using template $paramod$f12dcda81370c33c805fd75dda9a358fc7037618\$lut for cells of type $lut.
+Using template $paramod$d0c02604db5b26f771f20003e014d0c4ff8adb19\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=5\LUT=32'11111111000000010000000000000000 for cells of type $lut.
+Using template $paramod$b14e5f63333f4957dcdd9d1eb41bdedff986745a\$lut for cells of type $lut.
+Using template $paramod$c029ee1c90f70da753687c51c30b72c68b96d2e6\$lut for cells of type $lut.
+Using template $paramod$930e9fa2eea539ca1e1e572147864526f7da92d6\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0000000011110001 for cells of type $lut.
+Using template $paramod$e8d30818c6e637228585eec9fe6ef0f022ff469b\$lut for cells of type $lut.
+Using template $paramod$6b2b5e9d21b4559f1671d5d9b602cfa807a529aa\$lut for cells of type $lut.
+Using template $paramod$260a844cad2b4d83483de5315bb11137b82c39bd\$lut for cells of type $lut.
+Using template $paramod$846c7f240aea26338433f60227082b0956af6797\$lut for cells of type $lut.
+Using template $paramod$7a8394c5de994841216f597afed6044614eecc6e\$lut for cells of type $lut.
+Using template $paramod$5028a7c5b73f7ed111ed38a3165460ad1d34c16b\$lut for cells of type $lut.
+Using template $paramod$d5da9132af0ea814c0e41883558afbd913498ae8\$lut for cells of type $lut.
+Using template $paramod$0d162d9c5c3127365e70653be44d05f6430c4b70\$lut for cells of type $lut.
+Using template $paramod$43479b78e429c655fcb0bc3d9d093991b0052a6a\$lut for cells of type $lut.
+Using template $paramod$759c2d151a04e2ba40c26d3172b50505d6a17652\$lut for cells of type $lut.
+Using template $paramod$becad630673be44c4d16e3360f816e9223d9cbcf\$lut for cells of type $lut.
+Using template $paramod$b1537152128b8caeff32a5fd1e0e65d0efd25a98\$lut for cells of type $lut.
+Using template $paramod$18340b183019972bdc61053a48218e0193b90ed5\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=5\LUT=268435456 for cells of type $lut.
+Using template $paramod$435f7de0382a08886d3955fa5b76e0bd8e568253\$lut for cells of type $lut.
+Using template $paramod$d429af72c696fec65fff847b6d0f770f9481dfff\$lut for cells of type $lut.
+Using template $paramod$19ff5b38a209faa28cb8951377228b96ef3dae41\$lut for cells of type $lut.
+Using template $paramod$0d297909445c9bec417151a3329d18403daafcd5\$lut for cells of type $lut.
+Using template $paramod$d0de7d9e8794712ea6a21286959095cd3acf99b0\$lut for cells of type $lut.
+Using template $paramod$02d9bf978edb60584993372342c7e883f4ca46f6\$lut for cells of type $lut.
+Using template $paramod$0aceb6b41c33bb158f0c5d3abfa15267eb2fe518\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'1010110000000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=4\LUT=16'0000000011111000 for cells of type $lut.
+Using template $paramod$505849f6b48657fcc076a0b88b2214efe617a6e2\$lut for cells of type $lut.
+Using template $paramod$789fb68c1ce35c7610c9c3212fb7505f263fdc96\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=5\LUT=32'10101010111111000000000000000000 for cells of type $lut.
+Using template $paramod$800f2b5225bacbbb50c0cc8173fa94e435476346\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=5\LUT=65344 for cells of type $lut.
+Using template $paramod$415a62358290b70884679c86908ca13925457cd5\$lut for cells of type $lut.
+Using template $paramod$ff06bd949c854da7028aff054e56bed683c3590b\$lut for cells of type $lut.
+Using template $paramod$82f54ca446d304de57e2265cd06eb2da9a174f23\$lut for cells of type $lut.
+Using template $paramod$23a97addd281376871d79b9e1967665a41fc366d\$lut for cells of type $lut.
+No more expansions possible.
+<suppressed ~3516 debug messages>
+
+4.24. Executing DFFINIT pass (set INIT param on FF cells).
+Setting cpu.$auto$simplemap.cc:420:simplemap_dff$629.INIT (port=Q, net=\iaddr [2]) to 1'0.
+Setting cpu.$auto$simplemap.cc:420:simplemap_dff$628.INIT (port=Q, net=\iaddr [1]) to 1'0.
+Setting cpu.$auto$simplemap.cc:420:simplemap_dff$630.INIT (port=Q, net=\iaddr [3]) to 1'0.
+Setting cpu.$auto$simplemap.cc:420:simplemap_dff$631.INIT (port=Q, net=\iaddr [4]) to 1'0.
+Setting cpu.$auto$simplemap.cc:420:simplemap_dff$636.INIT (port=Q, net=\iaddr [9]) to 1'0.
+Setting cpu.$auto$simplemap.cc:420:simplemap_dff$643.INIT (port=Q, net=\iaddr [16]) to 1'0.
+Setting cpu.$auto$simplemap.cc:420:simplemap_dff$642.INIT (port=Q, net=\iaddr [15]) to 1'0.
+Setting cpu.$auto$simplemap.cc:420:simplemap_dff$658.INIT (port=Q, net=\iaddr [31]) to 1'0.
+Setting cpu.$auto$simplemap.cc:420:simplemap_dff$627.INIT (port=Q, net=\iaddr [0]) to 1'0.
+Setting cpu.$auto$simplemap.cc:420:simplemap_dff$637.INIT (port=Q, net=\iaddr [10]) to 1'0.
+Setting cpu.$auto$simplemap.cc:420:simplemap_dff$638.INIT (port=Q, net=\iaddr [11]) to 1'0.
+Setting cpu.$auto$simplemap.cc:420:simplemap_dff$633.INIT (port=Q, net=\iaddr [6]) to 1'0.
+Setting cpu.$auto$simplemap.cc:420:simplemap_dff$649.INIT (port=Q, net=\iaddr [22]) to 1'0.
+Setting cpu.$auto$simplemap.cc:420:simplemap_dff$648.INIT (port=Q, net=\iaddr [21]) to 1'0.
+Setting cpu.$auto$simplemap.cc:420:simplemap_dff$647.INIT (port=Q, net=\iaddr [20]) to 1'0.
+Setting cpu.$auto$simplemap.cc:420:simplemap_dff$632.INIT (port=Q, net=\iaddr [5]) to 1'0.
+Setting cpu.$auto$simplemap.cc:420:simplemap_dff$644.INIT (port=Q, net=\iaddr [17]) to 1'0.
+Setting cpu.$auto$simplemap.cc:420:simplemap_dff$640.INIT (port=Q, net=\iaddr [13]) to 1'0.
+Setting cpu.$auto$simplemap.cc:420:simplemap_dff$655.INIT (port=Q, net=\iaddr [28]) to 1'0.
+Setting cpu.$auto$simplemap.cc:420:simplemap_dff$654.INIT (port=Q, net=\iaddr [27]) to 1'0.
+Setting cpu.$auto$simplemap.cc:420:simplemap_dff$653.INIT (port=Q, net=\iaddr [26]) to 1'0.
+Setting cpu.$auto$simplemap.cc:420:simplemap_dff$639.INIT (port=Q, net=\iaddr [12]) to 1'0.
+Setting cpu.$auto$simplemap.cc:420:simplemap_dff$650.INIT (port=Q, net=\iaddr [23]) to 1'0.
+Setting cpu.$auto$simplemap.cc:420:simplemap_dff$646.INIT (port=Q, net=\iaddr [19]) to 1'0.
+Setting cpu.$auto$simplemap.cc:420:simplemap_dff$634.INIT (port=Q, net=\iaddr [7]) to 1'0.
+Setting cpu.$auto$simplemap.cc:420:simplemap_dff$651.INIT (port=Q, net=\iaddr [24]) to 1'0.
+Setting cpu.$auto$simplemap.cc:420:simplemap_dff$635.INIT (port=Q, net=\iaddr [8]) to 1'0.
+Setting cpu.$auto$simplemap.cc:420:simplemap_dff$645.INIT (port=Q, net=\iaddr [18]) to 1'0.
+Setting cpu.$auto$simplemap.cc:420:simplemap_dff$656.INIT (port=Q, net=\iaddr [29]) to 1'0.
+Setting cpu.$auto$simplemap.cc:420:simplemap_dff$652.INIT (port=Q, net=\iaddr [25]) to 1'0.
+Setting cpu.$auto$simplemap.cc:420:simplemap_dff$641.INIT (port=Q, net=\iaddr [14]) to 1'0.
+Setting cpu.$auto$simplemap.cc:420:simplemap_dff$657.INIT (port=Q, net=\iaddr [30]) to 1'0.
+Removed 0 unused cells and 2356 unused wires.
+
+4.25. Executing HIERARCHY pass (managing design hierarchy).
+
+4.25.1. Analyzing design hierarchy..
+Top module:  \cpu
+Used module:     \alu32
+Used module:     \regfile
+
+4.25.2. Analyzing design hierarchy..
+Top module:  \cpu
+Used module:     \alu32
+Used module:     \regfile
+Removed 0 unused modules.
+
+4.26. Printing statistics.
+
+=== alu32 ===
+
+   Number of wires:               1014
+   Number of wire bits:           1236
+   Number of public wires:           5
+   Number of public wire bits:     134
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1131
+     LUT1                           32
+     LUT2                          155
+     LUT3                           24
+     LUT4                           47
+     LUT5                           30
+     LUT6                          468
+     MUXCY                          94
+     MUXF7                         180
+     MUXF8                          37
+     XORCY                          64
+
+   Estimated number of LCs:        612
+
+=== cpu ===
+
+   Number of wires:                811
+   Number of wire bits:           1670
+   Number of public wires:          33
+   Number of public wire bits:     644
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1225
+     FDRE                           32
+     LUT1                            1
+     LUT2                          224
+     LUT3                           42
+     LUT4                           59
+     LUT5                           30
+     LUT6                          330
+     MUXCY                         218
+     MUXF7                          86
+     MUXF8                          10
+     XORCY                         191
+     alu32                           1
+     regfile                         1
+
+   Estimated number of LCs:        523
+
+=== regfile ===
+
+   Number of wires:                 12
+   Number of wire bits:            214
+   Number of public wires:          11
+   Number of public wire bits:     182
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 97
+     LUT6                            1
+     RAM32X1D                       96
+
+   Estimated number of LCs:          1
+
+=== design hierarchy ===
+
+   cpu                               1
+     alu32                           1
+     regfile                         1
+
+   Number of wires:               1837
+   Number of wire bits:           3120
+   Number of public wires:          49
+   Number of public wire bits:     960
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               2451
+     FDRE                           32
+     LUT1                           33
+     LUT2                          379
+     LUT3                           66
+     LUT4                          106
+     LUT5                           60
+     LUT6                          799
+     MUXCY                         312
+     MUXF7                         266
+     MUXF8                          47
+     RAM32X1D                       96
+     XORCY                         255
+
+   Estimated number of LCs:       1135
+
+4.27. Executing CHECK pass (checking for obvious problems).
+checking module alu32..
+checking module cpu..
+Warning: Wire cpu.alu_opcode has an unprocessed 'init' attribute.
+Warning: Wire cpu.opflag has an unprocessed 'init' attribute.
+checking module regfile..
+found and reported 2 problems.
+
+5. Executing Verilog backend.
+Dumping module `\alu32'.
+Dumping module `\cpu'.
+Dumping module `\regfile'.
+
+Warnings: 2 unique messages, 2 total
+End of script. Logfile hash: d5a18242c0
+CPU: user 6.21s system 0.24s, MEM: 179.42 MB total, 173.98 MB resident
+Yosys 0.9 (git sha1 1979e0b)
+Time spent: 18% 20x read_verilog (1 sec), 17% 2x write_verilog (1 sec), ...
+Compiling sources for post-synthesis simulation
+Ensure all required files listed in program_files_synth.txt
+RUNNING TEST 
+PASSED
+
+Passed
+
+You should see a PASS message and all tests pass.
+If any test reports as a FAIL, fix it before submitting.
+Once all tests pass, commit the changes into your code,
+and push the commit back to the server for evaluation.
